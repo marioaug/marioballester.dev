@@ -1,5 +1,224 @@
 
 <!DOCTYPE html>
 <html lang="es">
-<!-- ... (contenido completo de tu portfolio aquí) ... -->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Mario Ballester</title>
+  <link rel="icon" href="https://i.imgur.com/X3aLypU.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/4f3e54c76f.js" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #333333;
+      --card-bg: #f9f9f9;
+      --primary: #007acc;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #1a1a1a;
+      --text-color: #f9f9f9;
+      --card-bg: #2a2a2a;
+      --primary: #1e90ff;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    header img {
+      width: 160px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      margin-top: 1rem;
+      font-size: 2rem;
+    }
+
+    .toggle-button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    section {
+      max-width: 800px;
+      margin: auto;
+      padding: 1rem;
+    }
+
+    h2 {
+      border-left: 5px solid var(--primary);
+      padding-left: 0.5rem;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+    }
+
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .card li {
+      margin-bottom: 0.75rem;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .card li i {
+      margin-right: 0.5rem;
+      color: var(--primary);
+      min-width: 24px;
+      text-align: center;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form button {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="toggle-button" onclick="toggleTheme()">🌓</button>
+  <header>
+    <img src="https://i.imgur.com/1ZQZ1Zm.png" alt="Mario Ballester">
+    <h1>Mario Ballester</h1>
+    <p>Soporte técnico - Redes - CCTV - Reparaciones</p>
+  </header>
+
+  <section>
+    <h2 data-aos="fade-right">Perfil</h2>
+    <div class="card" data-aos="fade-up">
+      <p>Soy técnico con experiencia en soporte, reparación, redes, cámaras de seguridad y más. Trabajo con compromiso, responsabilidad y vocación de servicio.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-aos="fade-right">Habilidades</h2>
+    <div class="card" data-aos="fade-up">
+      <ul>
+        <li><i class="fas fa-tools"></i> Resolución de problemas técnicos</li>
+        <li><i class="fas fa-desktop"></i> Instalación de software y hardware</li>
+        <li><i class="fas fa-headset"></i> Soporte remoto y presencial</li>
+        <li><i class="fas fa-network-wired"></i> Configuración de redes</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-aos="fade-right">Herramientas</h2>
+    <div class="card" data-aos="fade-up">
+      <ul>
+        <li><i class="fab fa-windows"></i> Windows</li>
+        <li><i class="fas fa-user-shield"></i> AnyDesk y TeamViewer</li>
+        <li><i class="fas fa-sitemap"></i> Redes LAN/WAN</li>
+        <li><i class="fas fa-video"></i> Sistemas de videovigilancia</li>
+        <li><i class="fas fa-microchip"></i> Diagnóstico de hardware</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-aos="fade-right">Formación</h2>
+    <div class="card" data-aos="fade-up">
+      <ul>
+        <li><i class="fas fa-graduation-cap"></i> Formación en tecnología, redes y soporte técnico</li>
+        <li><i class="fas fa-certificate"></i> Cursos y certificaciones técnicas</li>
+        <li><i class="fas fa-laptop-code"></i> Especialización en instalación de equipos</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-aos="fade-right">Experiencia</h2>
+    <div class="card" data-aos="fade-up">
+      <ul>
+        <li><i class="fas fa-briefcase"></i> Red de Casinos del Litoral</li>
+        <li><i class="fas fa-hotel"></i> Hotel de Turismo</li>
+        <li><i class="fas fa-store"></i> Shopping Paso del Paraná</li>
+        <li><i class="fas fa-prescription-bottle-alt"></i> Farmalife</li>
+        <li><i class="fas fa-user-cog"></i> Proyectos freelance e independientes</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-aos="fade-right">Certificaciones</h2>
+    <div class="card" data-aos="fade-up">
+      <p>Certificados en soporte técnico, redes y reparación de hardware. Formación continua en herramientas actuales.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-aos="fade-right">Redes</h2>
+    <div class="card" data-aos="fade-up">
+      <p><a href="https://www.linkedin.com/in/mario-ballester-739b8951/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-aos="fade-right">Contacto</h2>
+    <div class="card" data-aos="fade-up">
+      <form>
+        <input type="text" placeholder="Tu nombre" required />
+        <input type="email" placeholder="Tu correo electrónico" required />
+        <textarea placeholder="Tu mensaje" rows="5" required></textarea>
+        <button type="submit">Enviar mensaje</button>
+      </form>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute("data-theme");
+      document.documentElement.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
+    }
+  </script>
+</body>
+
 </html>
