@@ -334,7 +334,7 @@ Camaras IP/WIFI</li>
   <h2 class="text-2xl font-semibold mb-4" data-aos="fade-right">☎Contacto</h2>
     <div class="card p-4 text-justify" data-aos="fade-up">
       
-  <form action="https://formsubmit.co/mario_ballester@hotmail.com" method="POST">
+  <form action="https://formsubmit.co/mario_ballester@hotmail.com" method="POST" id="contact-form">
   <input type="text" name="name" placeholder="Tu nombre" required />
   <input type="email" name="email" placeholder="Tu correo electrónico" required />
   <textarea name="message" placeholder="Tu mensaje" rows="5" required></textarea>
@@ -346,6 +346,35 @@ Camaras IP/WIFI</li>
   <button type="submit">Enviar mensaje</button> <br>
   <br> <p>📍 Corrientes Capital, Argentina - 3400</p>
   </form>
+  <div id="form-message" class="hidden text-green-600 text-center mt-4">
+  ✅ ¡Gracias por tu mensaje! Te responderé pronto.
+  </div>
+  <!-- Script para mostrar mensaje al enviar -->
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          document.getElementById("form-message").classList.remove("hidden");
+          form.reset();
+        } else {
+          alert("Hubo un error. Por favor intentá nuevamente.");
+        }
+      }).catch(error => {
+        alert("Error al enviar el formulario.");
+      });
+    });
+  </script>    
     </div>
   </section>
 
