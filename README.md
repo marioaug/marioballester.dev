@@ -48,6 +48,10 @@ src/
 
 ## 📸 Capturas
 
+## Demo animada
+
+![Animación](assets/scrollpage.gif)
+
 ## 👨‍💻 Autor
 Mario Ballester
 Desarrollador web frontend apasionado por el diseño UX/UI y el código limpio.
