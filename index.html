@@ -8,9 +8,7 @@
   <link rel="icon" href="https://i.imgur.com/X3aLypU.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <script src="https://kit.fontawesome.com/4f3e54c76f.js" crossorigin="anonymous"></script>
 
@@ -127,10 +125,10 @@
     display: block;
     object-fit: cover;       /* <- Esto recorta y ajusta la imagen */
     transition: transform 0.3s ease;
-   }
+    }
    .profile-img:hover {
     transform: scale(1.05);
-   }
+    }
 
    .name {
     font-size: 2rem;
@@ -289,31 +287,31 @@
   .footer .social-links a:hover {
     color: #4dd0e1;
     }
-}
+  }
 
 /* Espaciado para que no tape el contenido fijo */
     section {
      scroll-margin-top: 80px;
-    }
+  }
 
     .tech-marquee {
   overflow: hidden;
   background-color: var(--bg-color);
   padding: 1.5rem 0;
   position: relative;
-}
+  }
 
-.track {
-  display: flex;
-  animation: scroll 25s linear infinite;
-  width: fit-content;
-}
+  .track {
+   display: flex;
+   animation: scroll 25s linear infinite;
+   width: fit-content;
+  }
 
-.tech-marquee:hover .track {
-  animation-play-state: paused;
-}
+  .tech-marquee:hover .track {
+   animation-play-state: paused;
+  }
 
-.item {
+  .item {
   flex: 0 0 auto;
   width: 160px;
   display: flex;
@@ -322,41 +320,41 @@
   font-size: 2.5rem;
   color: var(--text-color);
   transition: transform 0.3s ease, color 0.3s ease;
-}
+  }
 
-.item:hover {
-  color: var(--primary);
-  transform: scale(1.2);
-}
+  .item:hover {
+   color: var(--primary);
+   transform: scale(1.2);
+  }
 
-@keyframes scroll {
+ @keyframes scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
-}
+  }
 
 /* Modo oscuro */
-body.dark .tech-marquee {
-  background-color: #1a1a1a;
-}
+   body.dark .tech-marquee {
+    background-color: #1a1a1a;
+  }
 
-body.dark .item {
-  color: #f3f4f6;
-}
+   body.dark .item {
+    color: #f3f4f6;
+  }
     
     scrollTopBtn {
   position: fixed;
   bottom: 20px;
   right: 20px;
   z-index: 1000;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   background-color: #1a1a1a;
   color: #fff;
   border: none;
   border-radius: 50%;
-  width: 48px;
-  height: 48px;
+  width: 60px;
+  height: 60px;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   transform: scale(0.95);
   opacity: 0;
   pointer-events: none;
@@ -545,6 +543,28 @@ Camaras IP/WIFI</li>
   </script>    
     </div>
   </section>
+ <!-- Botón Volver Arriba -->
+ <div class="tooltip">
+  <button id="scrollTopBtn">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+  <span class="tooltiptext">⬆ Volver arriba</span>
+ </div>
+  <script>
+   const scrollBtn = document.getElementById("scrollTopBtn");
+
+  window.addEventListener("scroll", () => {
+  if (window.scrollY > 200) {
+    scrollBtn.classList.add("show");
+  } else {
+    scrollBtn.classList.remove("show");
+  }
+  });
+
+  scrollBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+  </script>
 
   <footer class="footer">
   <div class="footer-content">
@@ -567,7 +587,7 @@ Camaras IP/WIFI</li>
       </a>
     </div>
   </div>
-</footer>
+  </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
@@ -578,27 +598,7 @@ Camaras IP/WIFI</li>
       document.documentElement.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
     }
   </script>
-  <!-- Botón Volver Arriba -->
-<button id="scrollTopBtn" title="Volver arriba">
-  <i class="fas fa-arrow-up"></i>
-</button>
-
-<script>
-const scrollBtn = document.getElementById("scrollTopBtn");
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 200) {
-    scrollBtn.classList.add("show");
-  } else {
-    scrollBtn.classList.remove("show");
-  }
-});
-
-scrollBtn.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-</script>
-
+ 
 </body>
 
 </html>
