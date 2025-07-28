@@ -368,10 +368,9 @@
   scrollTopWrapper {
   position: fixed;
   bottom: 100px;
-  left: 50vw; /* centrado respecto al viewport */
+  left: 50vw;
   transform: translateX(-50%);
   z-index: 9999;
-  pointer-events: auto;
   }
 }
   </style>
@@ -546,13 +545,7 @@ Camaras IP/WIFI</li>
   </script>    
     </div>
   </section>
- <!-- Botón Volver Arriba -->
- <div id="scrollTopWrapper">
-  <button id="scrollTopBtn" title="Volver arriba" aria-label="Volver arriba">
-    <i class="fa-solid fa-chevron-up"></i>
-  </button>
-</div>
-  
+   
  <script>
   document.getElementById("scrollTopBtn").addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -591,7 +584,13 @@ Camaras IP/WIFI</li>
       document.documentElement.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
     }
   </script>
- 
+<!-- Botón Volver Arriba -->
+ <div id="scrollTopWrapper">
+  <button id="scrollTopBtn" title="Volver arriba" aria-label="Volver arriba">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+</div>
+  
 </body>
 
 </html>
