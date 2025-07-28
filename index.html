@@ -586,21 +586,11 @@ Camaras IP/WIFI</li>
       });
     });
   </script>
-      
-    </div>
-  </section>
- <!-- Botón Volver Arriba -->
- <div class="tooltip">
-  <button id="scrollTopBtn">
-    <i class="fas fa-arrow-up"></i>
-  </button>
-  <span class="tooltiptext"> Volver arriba</span>
- </div>
 
   <script>
   const scrollBtn = document.getElementById("scrollTopBtn");
 
- window.addEventListener("scroll", () => {
+  window.addEventListener("scroll", () => {
   if (window.scrollY > 200) {
     scrollBtn.classList.add("show");
   } else {
@@ -614,6 +604,15 @@ scrollBtn.addEventListener("click", () => {
  </script>
 
   <footer class="footer">
+    </div>
+  </section>
+ <!-- Botón Volver Arriba -->
+ <div class="tooltip">
+  <button id="scrollTopBtn">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+  <span class="tooltiptext"> Volver arriba</span>
+ </div>
   <div class="footer-content">
     <p>&copy; 2025 Mario Ballester. Todos los derechos reservados.</p>
     <div class="social-links">
