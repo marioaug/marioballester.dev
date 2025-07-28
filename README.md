@@ -47,6 +47,21 @@ src/
 └── App.jsx          # Rutas y estructura base
 
 ## 📸 Capturas
+A continuación se muestran algunas vistas de [marioballester.dev](https://marioballester.dev):
+
+### 🏠 Página principal
+
+![Home](assets/snapshoot1.png)
+
+### 💼 Sección de Proyectos
+
+![Proyectos](assets/snapshoot2.png)
+
+### 📞 Contacto
+
+![Contacto](assets/snapshoot3.png)
+
+> Generadas con [site-shot.dev](https://site-shot.dev)
 
 ## Demo animada
 [Animación](assets/scrollpage.gif)
