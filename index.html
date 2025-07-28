@@ -342,7 +342,7 @@
   }
 
   scrollTopBtn {
-   background-color: #333;
+  background-color: #333;
   color: white;
   border: none;
   border-radius: 50%;
@@ -366,12 +366,11 @@
   }
 
   scrollTopWrapper {
-  position: fixed !important;
-  bottom: 100px !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  z-index: 9999 !important;
-  width: auto !important;
+  position: fixed;
+  bottom: 100px;
+  left: 50vw; /* centrado respecto al viewport */
+  transform: translateX(-50%);
+  z-index: 9999;
   pointer-events: auto;
   }
 }
