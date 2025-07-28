@@ -593,20 +593,22 @@ Camaras IP/WIFI</li>
   <span class="tooltiptext"> Volver arriba</span>
  </div>
   <script>
-   const scrollBtn = document.getElementById("scrollTopBtn");
 
-  window.addEventListener("scroll", () => {
+  <script>
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+ window.addEventListener("scroll", () => {
   if (window.scrollY > 200) {
     scrollBtn.classList.add("show");
   } else {
     scrollBtn.classList.remove("show");
   }
-  });
+});
 
-  scrollBtn.addEventListener("click", () => {
+scrollBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-  </script>
+});
+</script>
 
   <footer class="footer">
   <div class="footer-content">
