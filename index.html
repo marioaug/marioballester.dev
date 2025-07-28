@@ -122,6 +122,8 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
     margin: 0 auto 1rem auto; /* Esto centra la imagen horizontalmente */
     display: block;
+    object-fit: cover;       /* <- Esto recorta y ajusta la imagen */
+    transition: transform 0.3s ease;
    }
    .profile-img:hover {
     transform: scale(1.05);
@@ -244,30 +246,30 @@
     .footer-content {
      max-width: 900px;
      margin: 0 auto; 
-   }
+    }
 
    .footer .social-links {
     margin-top: 0.8rem;
     display: flex;
     justify-content: center;
     gap: 1.5rem;
-   }
+    }
 
    .footer .social-links a {
     color: var(--primary);
     transition: transform 0.2s ease, color 0.3s ease;
-   }
+    }
 
    .footer .social-links a:hover {
     color: #005f99;
     transform: scale(1.15);
-   }
-
+    }
+ 
    .footer svg {
     width: 24px;
     height: 24px;
     display: inline-block;
-   }
+    }
 
 /* 🌙 Dark Mode: activado por sistema */
 @media (prefers-color-scheme: dark) {
@@ -275,15 +277,15 @@
     background-color: #1a1a1a;
     color: #e0e0e0;
     border-top: 1px solid #333333;
-   }
+    }
 
   .footer .social-links a {
     color: #00bcd4;
-  }
+    }
 
   .footer .social-links a:hover {
     color: #4dd0e1;
-  }
+    }
 }
 
 /* Espaciado para que no tape el contenido fijo */
