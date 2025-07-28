@@ -9,6 +9,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <script src="https://kit.fontawesome.com/4f3e54c76f.js" crossorigin="anonymous"></script>
 
   <!-- ✅ Tailwind CSS CDN -->
@@ -339,6 +342,37 @@ body.dark .tech-marquee {
 body.dark .item {
   color: #f3f4f6;
 }
+    
+    scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  font-size: 1.2rem;
+  background-color: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(0.95);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+scrollTopBtn.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+scrollTopBtn:hover {
+  background-color: #6366f1;
+  transform: scale(1.1);
+}
   </style>
 </head>
 
@@ -544,6 +578,27 @@ Camaras IP/WIFI</li>
       document.documentElement.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
     }
   </script>
+  <!-- Botón Volver Arriba -->
+<button id="scrollTopBtn" title="Volver arriba">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script>
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 200) {
+    scrollBtn.classList.add("show");
+  } else {
+    scrollBtn.classList.remove("show");
+  }
+});
+
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+</script>
+
 </body>
 
 </html>
