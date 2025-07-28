@@ -273,8 +273,8 @@
     }
 
 /* 🌙 Dark Mode: activado por sistema */
-@media (prefers-color-scheme: dark) {
-   .footer {
+    @media (prefers-color-scheme: dark) {
+    .footer {
     background-color: #1a1a1a;
     color: #e0e0e0;
     border-top: 1px solid #333333;
@@ -327,7 +327,7 @@
    transform: scale(1.2);
   }
 
- @keyframes scroll {
+  @keyframes scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
   }
@@ -341,11 +341,52 @@
     color: #f3f4f6;
   }
     
-    scrollTopBtn {
+   .tooltip {
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1000;
+  }
+
+  .tooltip .tooltiptext {
+  visibility: hidden;
+  min-width: 140px;
+  background-color: #2d2d2d;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 10px 12px;
+  position: absolute;
+  bottom: 65px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  font-size: 0.85rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  }
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+  }
+
+ @keyframes bounceIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+ }
+
+  scrollTopBtn {
   font-size: 1.5rem;
   background-color: #1a1a1a;
   color: #fff;
@@ -358,18 +399,19 @@
   transform: scale(0.95);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
+  transition: opacity 0.4s ease;
+ }
 
-scrollTopBtn.show {
+  scrollTopBtn.show {
   opacity: 1;
   pointer-events: auto;
-  transform: scale(1);
+  animation: bounceIn 0.5s ease;
 }
 
-scrollTopBtn:hover {
+  scrollTopBtn:hover {
   background-color: #6366f1;
   transform: scale(1.1);
+ }
 }
   </style>
 </head>
@@ -548,7 +590,7 @@ Camaras IP/WIFI</li>
   <button id="scrollTopBtn">
     <i class="fas fa-arrow-up"></i>
   </button>
-  <span class="tooltiptext">⬆ Volver arriba</span>
+  <span class="tooltiptext"> Volver arriba</span>
  </div>
   <script>
    const scrollBtn = document.getElementById("scrollTopBtn");
