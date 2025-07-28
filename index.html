@@ -340,84 +340,35 @@
    body.dark .item {
     color: #f3f4f6;
   }
-    
-   .tooltip {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-   }
-
-  .tooltip .tooltiptext {
-    visibility: hidden;
-    min-width: 140px;
-    background-color: #2d2d2d;
-    color: #fff;
-    text-align: center;
-    border-radius: 8px;
-    padding: 10px 12px;
-    position: absolute;
-    bottom: 65px;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    font-size: 0.85rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  }
- 
- .tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
-  }
-
- @keyframes bounceIn {
-  0% {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  60% {
-    transform: scale(1.1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-  }
- }
 
   scrollTopBtn {
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  background-color: #333;
+  color: white;
   border: none;
-  border-radius: 50%;
-  box-shadow: 4px 4px 8px #ccc, -4px -4px 8px #ffffff;
-  color: #333;
-  font-size: 1.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 1rem;
   cursor: pointer;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease, transform 0.3s ease;
-  z-index: 1000;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
  }
 
   scrollTopBtn.show {
   opacity: 1;
   pointer-events: auto;
   animation: bounceIn 0.4s ease;
-}
+ }
 
   scrollTopBtn:hover {
-  transform: scale(1.1);
-  background: linear-gradient(145deg, #e6e6e6, #ffffff);
-  box-shadow: inset 4px 4px 6px #ccc, inset -4px -4px 6px #fff;
+  background-color: #555;
+ }
+
+  scrollTopContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: -2.5rem; /* opcional si necesitás acercarlo al footer */
  }
 }
   </style>
@@ -593,12 +544,11 @@ Camaras IP/WIFI</li>
     </div>
   </section>
  <!-- Botón Volver Arriba -->
- <div class="tooltip">
-  <button id="scrollTopBtn" title="Volver arriba" aria-label="Volver arriba">
-  <i class="fa-solid fa-chevron-up"></i>
+ <div id="scrollTopContainer">
+  <button id="scrollTopBtn" aria-label="Volver arriba">
+    <i class="fa-solid fa-chevron-up"></i>
   </button>
-  <span class="tooltiptext"> Volver arriba</span>
- </div>
+</div>
   
  <script>
  const scrollBtn = document.getElementById("scrollTopBtn");
