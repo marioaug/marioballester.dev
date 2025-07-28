@@ -392,14 +392,12 @@
   color: #fff;
   border: none;
   border-radius: 50%;
-  width: 90px;
-  height: 90px;
+  width: 60px;
+  height: 60px;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   transform: scale(0.95);
   opacity: 0;
-  display: none;
-  position: fixed;
   pointer-events: none;
   transition: opacity 0.4s ease;
  }
@@ -408,7 +406,6 @@
   opacity: 1;
   pointer-events: auto;
   animation: bounceIn 0.5s ease;
-  display: block;
 }
 
   scrollTopBtn:hover {
@@ -585,12 +582,22 @@ Camaras IP/WIFI</li>
         alert("Error al enviar el formulario.");
       });
     });
-  </script>
+  </script>    
+    </div>
+  </section>
+ <!-- Botón Volver Arriba -->
+ <div class="tooltip">
+  <button id="scrollTopBtn">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+  <span class="tooltiptext"> Volver arriba</span>
+ </div>
+  <script>
 
   <script>
-  const scrollBtn = document.getElementById("scrollTopBtn");
-    
-  window.addEventListener("scroll", () => {
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+ window.addEventListener("scroll", () => {
   if (window.scrollY > 200) {
     scrollBtn.classList.add("show");
   } else {
@@ -601,7 +608,7 @@ Camaras IP/WIFI</li>
 scrollBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
- </script>
+</script>
 
   <footer class="footer">
   <div class="footer-content">
