@@ -49,8 +49,7 @@ src/
 ## 📸 Capturas
 
 ## Demo animada
-
-![Animación](assets/scrollpage.gif)
+[Animación](assets/scrollpage.gif)
 
 ## 👨‍💻 Autor
 Mario Ballester
