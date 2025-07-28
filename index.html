@@ -292,6 +292,53 @@
     section {
      scroll-margin-top: 80px;
     }
+
+    .tech-marquee {
+  overflow: hidden;
+  background-color: var(--bg-color);
+  padding: 1.5rem 0;
+  position: relative;
+}
+
+.track {
+  display: flex;
+  animation: scroll 25s linear infinite;
+  width: fit-content;
+}
+
+.tech-marquee:hover .track {
+  animation-play-state: paused;
+}
+
+.item {
+  flex: 0 0 auto;
+  width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: var(--text-color);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.item:hover {
+  color: var(--primary);
+  transform: scale(1.2);
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Modo oscuro */
+body.dark .tech-marquee {
+  background-color: #1a1a1a;
+}
+
+body.dark .item {
+  color: #f3f4f6;
+}
   </style>
 </head>
 
@@ -384,6 +431,26 @@ Camaras IP/WIFI</li>
       <p><a href="https://github.com/marioaug/Certificados" target="_blank"><i class="fa-solid fa-certificate"></i> Certificados</a></p>
     </div>
   </section>
+
+  <section id="tecnologias" class="tech-marquee">
+  <div class="track">
+    <div class="item"><i class="fab fa-html5" title="HTML5"></i></div>
+    <div class="item"><i class="fab fa-css3-alt" title="CSS3"></i></div>
+    <div class="item"><i class="fab fa-js" title="JavaScript"></i></div>
+    <div class="item"><i class="fab fa-react" title="React"></i></div>
+    <div class="item"><i class="fab fa-node-js" title="Node.js"></i></div>
+    <div class="item"><i class="fas fa-database" title="MongoDB"></i></div>
+    <div class="item"><i class="fab fa-git-alt" title="Git"></i></div>
+    <!-- Repetidos para bucle -->
+    <div class="item"><i class="fab fa-html5"></i></div>
+    <div class="item"><i class="fab fa-css3-alt"></i></div>
+    <div class="item"><i class="fab fa-js"></i></div>
+    <div class="item"><i class="fab fa-react"></i></div>
+    <div class="item"><i class="fab fa-node-js"></i></div>
+    <div class="item"><i class="fas fa-database"></i></div>
+    <div class="item"><i class="fab fa-git-alt"></i></div>
+  </div>
+</section>
 
   <section class="my-10">
   <h2 class="text-2xl font-semibold mb-4" data-aos="fade-right"><i class="fa-solid fa-address-card"></i> Redes</h2>
