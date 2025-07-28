@@ -33,4 +33,26 @@ git clone https://github.com/marioaug/marioballester.dev.git
 cd marioballester.dev
 npm install
 npm run dev
+```
 
+## 🧾 Estructura general
+bash
+Copiar
+Editar
+src/
+├── assets/          # Imágenes y multimedia
+├── components/      # Componentes reutilizables
+├── pages/           # Secciones como Home, Proyectos, Contacto
+├── data/            # Datos estáticos (JSON o JS)
+└── App.jsx          # Rutas y estructura base
+
+## 📸 Capturas
+
+## 👨‍💻 Autor
+Mario Ballester
+Desarrollador web frontend apasionado por el diseño UX/UI y el código limpio.
+🔗 marioballester.dev
+🐙 @marioaug en GitHub
+
+## 📄 Licencia
+Este proyecto está bajo la licencia MIT - revisa el archivo LICENSE.
