@@ -174,11 +174,62 @@
       cursor: pointer;
       border-radius: 5px;
     }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .menu {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #111827;
+      z-index: 999;
+      padding: 10px 0;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .menu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu li {
+      display: inline-block;
+      margin: 0 15px;
+    }
+
+    .menu a {
+     text-decoration: none;
+     color: #f9fafb;
+     font-weight: 500;
+     transition: color 0.3s;
+    }
+
+    .menu a:hover {
+     color: #60a5fa; /* azul claro */
+    }
+
+/* Espaciado para que no tape el contenido fijo */
+   section {
+     scroll-margin-top: 80px;
+    }
   </style>
 </head>
 
 <body>
   <button class="toggle-button" onclick="toggleTheme()">🌓</button>
+  <nav class="menu">
+  <ul>
+    <li><a href="#perfil">Perfil</a></li>
+    <li><a href="#experiencia">Experiencia</a></li>
+    <li><a href="#formación">Formación</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+  
   <header class="profile-header">
   <img src="https://i.imgur.com/LIiEZCy.jpeg" alt="" class="profile-img">
   <h1 class="name">Mario Ballester</h1>
@@ -186,7 +237,7 @@
   <p class="role">⚙ Soporte Técnico IT | 🖥 Desarrollador Web Fullstack</p>
 </header>
 
-  <section class="my-10">
+  <section id="perfil" class="my-10">
     <h2 class="text-2xl font-semibold mb-4" data-aos="fade-right">😎Perfil</h2>
     <div class="card p-4 text-justify" data-aos="fade-up">
       <p>"Soy un profesional apasionado por la tecnología, con experiencia en soporte técnico, desarrollo web y automatización de procesos. 
@@ -213,7 +264,7 @@ Camaras IP/WIFI</li>
     </div>
   </section>
 
-  <section class="my-10">
+  <section id="formación" class="my-10">
   <h2 class="text-2xl font-semibold mb-4" data-aos="fade-right">📑Formación</h2>
     <div class="card p-4 text-justify" data-aos="fade-up">
       <ul>
@@ -224,7 +275,7 @@ Camaras IP/WIFI</li>
     </div>
   </section>
   
-  <section class="my-10">
+  <section id="experiencia" class="my-10">
   <h2 class="text-2xl font-semibold mb-4" data-aos="fade-right">🔌Proyectos Destacados</h2>
     <div class="card p-4 text-justify" data-aos="fade-up">
       <ul>
@@ -274,7 +325,7 @@ Camaras IP/WIFI</li>
     </div>
   </section>
   
-  <section class="my-10">
+  <section id="contacto" class="my-10">
   <h2 class="text-2xl font-semibold mb-4" data-aos="fade-right">☎Contacto</h2>
     <div class="card p-4 text-justify" data-aos="fade-up">
       
