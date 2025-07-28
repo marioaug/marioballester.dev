@@ -55,6 +55,16 @@
       font-size: 2rem;
     }
 
+    a {
+      color: #2563eb; /* Azul elegante - podés cambiarlo */
+      text-decoration: none; /* Quita subrayado */
+    }
+
+    a:hover {
+      color: #1e40af; /* Azul más oscuro al pasar el mouse */
+      text-decoration: underline;
+    }
+
     .toggle-button {
       position: absolute;
       top: 1rem;
@@ -267,14 +277,19 @@ Camaras IP/WIFI</li>
   <section class="my-10">
   <h2 class="text-2xl font-semibold mb-4" data-aos="fade-right">☎Contacto</h2>
     <div class="card p-4 text-justify" data-aos="fade-up">
-      <form>
-        <input type="text" placeholder="Tu nombre" required />
-        <input type="email" placeholder="Tu correo electrónico" required />
-        <textarea placeholder="Tu mensaje" rows="5" required></textarea>
-        <button type="submit">Enviar mensaje</button>
-        <br>
-        <br> <p>📍 Corrientes Capital, Argentina - 3400</p>
-      </form>
+      
+  <form action="https://formsubmit.co/mario_ballester@hotmail.com" method="POST">
+  <input type="text" name="name" placeholder="Tu nombre" required />
+  <input type="email" name="email" placeholder="Tu correo electrónico" required />
+  <textarea name="message" placeholder="Tu mensaje" rows="5" required></textarea>
+  
+  <!-- Opcional: evitar captcha y redireccionar -->
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="https://marioballester.dev/gracias.html">
+
+  <button type="submit">Enviar mensaje</button>
+  <p>📍 Corrientes Capital, Argentina - 3400</p>
+  </form>
     </div>
   </section>
 
