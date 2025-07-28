@@ -342,7 +342,6 @@
   }
 
   scrollTopBtn {
-  pointer-events: auto; /* El botón sí recibe clics */
   background-color: #333;
   color: white;
   border: none;
@@ -369,11 +368,9 @@
   scrollTopWrapper {
   position: fixed;
   bottom: 100px;
-  width: 100%; /* Asegura el ancho completo para poder centrar el contenido */
-  display: flex;
-  justify-content: center; /* Centra horizontalmente */
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 9999;
-  pointer-events: none; /* Permite que solo el botón sea clickeable */
   }
 }
   </style>
@@ -549,8 +546,8 @@ Camaras IP/WIFI</li>
     </div>
   </section>
  <!-- Botón Volver Arriba -->
- <div id="scrollTopContainer">
-  <button id="scrollTopBtn" aria-label="Volver arriba">
+ <div id="scrollTopWrapper">
+  <button id="scrollTopBtn" title="Volver arriba" aria-label="Volver arriba">
     <i class="fa-solid fa-chevron-up"></i>
   </button>
 </div>
