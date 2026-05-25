@@ -4,587 +4,383 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>💻Portfolio - Mario Ballester</title>
+  <title>💻 Portfolio - Mario Ballester</title>
   <link rel="icon" href="https://i.imgur.com/X3aLypU.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-
-  <script src="https://kit.fontawesome.com/4f3e54c76f.js" crossorigin="anonymous"></script>
-
-  <!-- ✅ Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            primary: '#00adb5',
+            darkbg: '#121212',
+            darkcard: '#1e1e1e',
+          }
+        }
+      }
+    }
+  </script>
+
   <style>
-    :root {
-      --bg-color: #fdfdfd;
-      --text-color: #222831;
-      --card-bg: #eeeeee;
-      --primary: #00adb5;      /* azul petróleo */
-
-    }
-
-    [data-theme="dark"] {
-      --bg-color: #121212;
-      --text-color: #e0e0e0;
-      --card-bg: #1e1e1e;
-      --primary: #00bcd4;       /* cian claro */
-
-    }
-
-    section:first-of-type {
-      padding-top: 50px; /* ajustá el valor según altura del menú */
-    }
-
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      margin: 0;
-      padding: 0;
       scroll-behavior: smooth;
       transition: background-color 0.3s, color 0.3s;
-      padding-top: 100px;
-    }
-
-    header {
-      text-align: center;
-      padding: 2rem;
-    }
-
-    header img {
-      width: 160px;
-      border-radius: 50%;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    h1 {
-      margin-top: 1rem;
-      font-size: 2rem;
-    }
-
-    a {
-      color: #2563eb; /* Azul elegante - podés cambiarlo */
-      text-decoration: none; /* Quita subrayado */
-    }
-
-    a:hover {
-      color: #1e40af; /* Azul más oscuro al pasar el mouse */
-      text-decoration: underline;
-    }
-
-    .toggle-button {
-      position: absolute;
-      top: 5rem;
-      right: 1rem;
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-
-    section {
-      max-width: 800px;
-      margin: auto;
-      padding: 1rem;
-    }
-
-    h2 {
-      border-left: 5px solid var(--primary);
-      padding-left: 0.5rem;
-    }
-
-    .card {
-      background-color: var(--card-bg);
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      margin-bottom: 2rem;
-    }
-
-     .profile-header {
-       text-align: center;
-       padding: 2rem;
-       background: linear-gradient(135deg, #ffffff, #f0f4f8);
-       border-radius: 20px;
-       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-       max-width: 600px;
-       margin: auto;
-       transition: background 0.3s ease-in-out;
-    }
-
-     .profile-img {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      border: 4px solid #6366f1; /* Color morado suave */
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-      margin: 0 auto 1rem auto; /* Esto centra la imagen horizontalmente */
-      display: block;
-      object-fit: cover;       /* <- Esto recorta y ajusta la imagen */
-      transition: transform 0.3s ease;
-    }
-     .profile-img:hover {
-      transform: scale(1.05);
-    }
-
-     .name {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #1f2937;
-      margin-bottom: 0.5rem;
-    }
-
-     .subtitle {
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: #4b5563;
-    }
-
-     .role {
-      font-size: 1rem;
-      color: #6b7280;
-      margin: 0.2rem 0;
     }
     
-     .card ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-     .card li {
-      margin-bottom: 0.75rem;
-      font-size: 1.05rem;
-      display: flex;
-      align-items: center;
-    }
-
-     .card li i {
-      margin-right: 0.5rem;
-      color: var(--primary);
-      min-width: 24px;
-      text-align: center;
-    }
-
-      form input, form textarea {
-       width: 100%;
-       padding: 0.5rem;
-       margin-bottom: 1rem;
-       border: 1px solid #ccc;
-       border-radius: 5px;
-    }
-
-      form button {
-       background-color: var(--primary);
-       color: white;
-       border: none;
-       padding: 0.5rem 1rem;
-       cursor: pointer;
-       border-radius: 5px;
-    }
-
-     html {
-      scroll-behavior: smooth;
-    }
-
-     .menu {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: #1a1a1a;
-      z-index: 999;
-      padding: 10px 0;
-      text-align: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    }
-
-     .menu ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-     .menu li {
-      display: inline-block;
-      margin: 0 15px;
-    }
-
-     .menu a {
-      text-decoration: none;
-      color: #f9fafb;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-     .menu a:hover {
-      color: #60a5fa; /* azul claro */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
     }
     
-     .menu a i {
-      margin-right: 6px;
-      color: #60a5fa; /* mismo azul claro que usás en hover */
-      transition: transform 0.3s ease, color 0.3s ease;
+    .dark .glass-card {
+      background: rgba(30, 30, 30, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-     /* Efecto al pasar el mouse: agrandar y aclarar el ícono */
-     .menu a:hover i {
-      transform: scale(1.2);
-      color: #93c5fd; /* azul más claro */
-    }
-     .footer {
-      background-color: var(--card-bg);
-      color: var(--text-color);
-      padding: 2rem 1rem;
-      text-align: center;
-      font-size: 0.9rem;
-      margin-top: 4rem;
-      border-top: 1px solid #e0e0e0;
-      transition: background-color 0.3s ease, color 0.3s ease;
+    .hero-bg {
+      background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
     }
 
-     .footer-content {
-      max-width: 900px;
-      margin: 0 auto; 
+    .dark .hero-bg {
+      background: linear-gradient(135deg, #1f1c2c 0%, #928DAB 100%);
     }
 
-     .footer .social-links {
-      margin-top: 0.8rem;
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-    }
-
-     .footer .social-links a {
-      color: var(--primary);
-      transition: transform 0.2s ease, color 0.3s ease;
-    }
-
-     .footer .social-links a:hover {
-      color: #005f99;
-      transform: scale(1.15);
-    }
- 
-     .footer svg {
-      width: 24px;
-      height: 24px;
-      display: inline-block;
-    }
-
-     /* 🌙 Dark Mode: activado por sistema */
-     @media (prefers-color-scheme: dark) {
-     .footer {
-      background-color: #1a1a1a;
-      color: #e0e0e0;
-      border-top: 1px solid #333333;
-     }
-    }
-
-     .footer .social-links a {
-      color: #00bcd4;
-    }
-
-     .footer .social-links a:hover {
-       color: #4dd0e1;
-    }
-
-     /* Espaciado para que no tape el contenido fijo */
-     section {
-      scroll-margin-top: 80px;
-    }
-
-     .tech-marquee {
+    /* Marquee Animation */
+    .tech-marquee {
       overflow: hidden;
-      background-color: var(--bg-color);
-      padding: 1.5rem 0;
+      white-space: nowrap;
       position: relative;
     }
-
-     .track {
-      display: flex;
+    .track {
+      display: inline-flex;
       animation: scroll 25s linear infinite;
-      width: fit-content;
     }
-
-     .tech-marquee:hover .track {
+    .tech-marquee:hover .track {
        animation-play-state: paused;
     }
-
-     .item {
-       flex: 0 0 auto;
-       width: 160px;
-       display: flex;
-       align-items: center;
-       justify-content: center;
-       font-size: 2.5rem;
-       color: var(--text-color);
-       transition: transform 0.3s ease, color 0.3s ease;
-    }
-
-     .item:hover {
-     color: var(--primary);
-     transform: scale(1.2);
-    }
-
-     @keyframes scroll {
+    @keyframes scroll {
      0% { transform: translateX(0); }
      100% { transform: translateX(-50%); }
     }
-
-      /* Modo oscuro */
-      body.dark .tech-marquee {
-       background-color: #1a1a1a;
-    }
-
-      body.dark .item {
-       color: #f3f4f6;
-    }
-
-     #scrollTopWrapper:hover {
-     text-decoration: underline;
-    }
-
-     #scrollTopContainer {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      margin-top: 2rem;
-      margin-bottom: -2.5rem; /* opcional si necesitás acercarlo al footer */
-    }
-
-     #scrollTopWrapper {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: none;
-      border: none;
-      padding: 0;
-      color: #00e6f6; /* COLOR VISIBLE */
-      font-weight: bold;
-      text-decoration: none;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-      #scrollTopWrapper i {
-       transition: transform 0.3s ease; 
-    }
-
-      #scrollTopWrapper:hover i {
-       transform: translateY(-4px); /* levanta la flecha */
-    }
-
   </style>
-  
 </head>
 
-<body>
-  <button class="toggle-button" onclick="toggleTheme()">🌓</button>
-  <nav class="menu">
-  <ul>
-    <li><a href="#perfil"><i class="fas fa-user"></i> Perfil</a></li>
-    <li><a href="#experiencia"><i class="fas fa-briefcase"></i> Experiencia</a></li>
-    <li><a href="#formación"><i class="fas fa-graduation-cap"></i> Formación</a></li>
-    <li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
-  </ul>
-</nav>
-  
-  <header class="profile-header">
-  <img src="https://i.imgur.com/LIiEZCy.jpeg" alt="" class="profile-img">
-  <h1 class="name">Mario Ballester</h1>
-  <p class="subtitle">💼 PORTFOLIO PROFESIONAL</p>
-  <p class="role">⚙ Soporte Técnico IT | 🖥 Desarrollador Web Fullstack</p>
-</header>
+<body class="bg-gray-50 text-gray-800 dark:bg-darkbg dark:text-gray-200 pt-20">
 
-  <section id="perfil" class="my-10">
-    <h2 class="text-2xl font-semibold mb-4" data-aos="fade-right"><i class="fa-solid fa-user-tie"></i> Perfil</h2>
-    <div class="card p-4 text-justify" data-aos="fade-up">
-      <p>"Soy un profesional apasionado por la tecnología, con experiencia en soporte técnico, desarrollo web y automatización de procesos. 
-          Me especializo en crear soluciones eficientes usando herramientas como React, Node.js y plataformas No Code como Make y N8N. 
-          Busco siempre integrar nuevas habilidades que mejoren la experiencia de usuarios y optimicen tareas en entornos reales".</p>
-    </div>
-  </section>
-
-  <section class="my-10">
-  <h2 class="text-2xl font-semibold mb-4" data-aos="fade-right">💡Habilidades Destacadas</h2>
-    <div class="card p-4 text-justify" data-aos="fade-up">
-      <ul>
-        <li><i class="fas fa-tools"></i> Lenguajes y frameworks:
-JavaScript, PHP, HTML/CSS, Kotlin, Swift UI, SQL
-React, Node.js, Android Studio, JUnit</li>
-        <li><i class="fas fa-desktop"></i> Bases de datos:
-MySQL, PostgreSQL, MongoDB. Relacionales y no relacionales</li>
-        <li><i class="fas fa-headset"></i> Herramientas y entornos:
-Git, Linux, Windows, CRMs (Salesforce, Siebel, Plex25), Make, N8N, ChatGPT, Gemini AI</li>
-        <li><i class="fas fa-network-wired"></i> Networking y Hardware:
-TCP/IP, WAN/LAN, Mikrotik, Reparación, instalación y mantenimiento de equipos
-Camaras IP/WIFI</li>
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full bg-gray-900/95 backdrop-blur-sm z-50 py-3 shadow-lg transition-colors">
+    <div class="max-w-6xl mx-auto px-4 flex justify-between items-center relative">
+      <ul class="flex space-x-4 md:space-x-8 mx-auto md:mx-0">
+        <li><a href="#perfil" class="text-gray-200 hover:text-blue-400 font-medium transition-all flex items-center gap-2"><i class="fas fa-user"></i> <span class="hidden sm:inline">Perfil</span></a></li>
+        <li><a href="#experiencia" class="text-gray-200 hover:text-blue-400 font-medium transition-all flex items-center gap-2"><i class="fas fa-briefcase"></i> <span class="hidden sm:inline">Proyectos</span></a></li>
+        <li><a href="#contacto" class="text-gray-200 hover:text-blue-400 font-medium transition-all flex items-center gap-2"><i class="fas fa-envelope"></i> <span class="hidden sm:inline">Contacto</span></a></li>
       </ul>
+      <button id="theme-toggle" class="absolute right-0 text-2xl hover:scale-110 transition-transform focus:outline-none" title="Cambiar tema">
+        🌓
+      </button>
     </div>
-  </section>
+  </nav>
+  
+  <!-- Hero Section -->
+  <header class="hero-bg py-16 px-4 mt-8 rounded-3xl shadow-xl max-w-4xl mx-auto text-center transition-all duration-300" data-aos="zoom-in">
+    <img src="https://i.imgur.com/LIiEZCy.jpeg" alt="Mario Ballester" class="w-40 h-40 rounded-full border-4 border-indigo-500 shadow-2xl mx-auto object-cover hover:scale-105 transition-transform duration-300">
+    <h1 class="text-4xl md:text-5xl font-bold mt-6 text-gray-900 dark:text-white">Mario Ballester</h1>
+    <p class="text-lg md:text-xl font-medium text-gray-700 dark:text-gray-300 mt-2 tracking-wide">💼 PORTFOLIO PROFESIONAL</p>
+    <p class="text-md text-gray-600 dark:text-gray-400 mt-2 font-medium">⚙ Soporte Técnico IT | 🖥 Desarrollador Web Fullstack</p>
+  </header>
 
-  <section id="formación" class="my-10">
-  <h2 class="text-2xl font-semibold mb-4" data-aos="fade-right">📑 Formación</h2>
-    <div class="card p-4 text-justify" data-aos="fade-up">
-      <ul>
-        <li><i class="fas fa-graduation-cap"></i> Formación en tecnología, redes y soporte técnico</li>
-        <li><i class="fas fa-certificate"></i> Cursos y certificaciones técnicas</li>
-        <li><i class="fas fa-laptop-code"></i> Especialización en instalación de equipos</li>
-      </ul>
-    </div>
-  </section>
-  
-  <section id="experiencia" class="my-16 px-4 bg-gray-50 dark:bg-gray-900 rounded-2xl shadow-lg">
-  <h2 class="text-3xl font-bold mb-10 text-center text-gray-800 dark:text-white" data-aos="fade-right">🔌 Proyectos Destacados</h2>
-  
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+  <main class="max-w-6xl mx-auto px-4">
     
-    <!-- Proyecto 1 -->
-    <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transform transition duration-300 hover:-translate-y-1" data-aos="fade-up">
-      <img src="https://i.imgur.com/dWoqwzV.png" alt="Mockup Soporte IT" class="w-full h-40 object-contain mb-3 rounded-lg bg-gray-100 loading="lazy" />
-      <div class="p-6">
-        <h3 class="text-xl font-semibold mb-2 flex items-center gap-2 text-gray-900">
-         <i class="fas fa-briefcase text-blue-600 transform transition duration-300 hover:scale-125"></i>
-            Sistema de Soporte IT
-        </h3>
-        <p class="text-gray-600 text-sm mb-2">🔧 <strong>Tecnologías:</strong> Make, Gmail API, Sheets, ChatGPT</p>
-        <p class="text-gray-600 text-sm mb-2">✅ Automatiza tickets por email y responde automáticamente.</p>
-        <p class="text-gray-600 text-sm mb-4">📊 Redujo tareas repetitivas en un 60%.</p>
-        <a href="https://demos-interactivos.vercel.app/" target="_blank" class="inline-block mt-4 px-4 py-2 rounded-lg bg-purple-600 text-white hover:bg-purple-700 hover:text-white transition-colors duration-300 text-sm font-medium">
-          Ver demo
-        </a>
+    <!-- Perfil -->
+    <section id="perfil" class="my-16 scroll-mt-24">
+      <h2 class="text-3xl font-bold mb-6 border-l-4 border-primary pl-4" data-aos="fade-right">Perfil</h2>
+      <div class="glass-card p-6 md:p-8 rounded-2xl shadow-lg" data-aos="fade-up">
+        <p class="text-lg leading-relaxed text-justify">
+          "Soy un profesional apasionado por la tecnología, con experiencia en soporte técnico, desarrollo web y automatización de procesos. 
+          Me especializo en crear soluciones eficientes usando herramientas como React, Node.js y plataformas No Code como Make y N8N. 
+          Busco siempre integrar nuevas habilidades que mejoren la experiencia de usuarios y optimicen tareas en entornos reales".
+        </p>
       </div>
-    </div>
+    </section>
 
-    <!-- Proyecto 2 -->
-    <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transform transition duration-300 hover:-translate-y-1" data-aos="fade-up">
-      <img src="https://i.imgur.com/7lnYZ0v.png" alt="Mockup Stock" class="w-full h-40 object-contain mb-3 rounded-lg bg-gray-100" loading="lazy" />
-      <div class="p-6">
-        <h3 class="text-xl font-semibold mb-2 flex items-center gap-2 text-gray-900">
-          <i class="fas fa-hotel text-indigo-600 transform transition duration-300 hover:scale-125"></i>
-          Control de Stock Simple
-        </h3>
-        <p class="text-gray-600 text-sm mb-2">🔧 <strong>Tecnologías:</strong> React, Node.js, MongoDB</p>
-        <p class="text-gray-600 text-sm mb-2">✅ ABM de productos con filtros y roles.</p>
-        <p class="text-gray-600 text-sm mb-4">📊 Simula inventario tipo farmacia.</p>
-        <a href="https://demos-interactivos.vercel.app/" target="_blank" class="inline-block mt-4 px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 hover:text-white transition-colors duration-300 text-sm font-medium">
-          Ver demo
-        </a>
+    <!-- Habilidades -->
+    <section class="my-16">
+      <h2 class="text-3xl font-bold mb-6 border-l-4 border-primary pl-4" data-aos="fade-right">Habilidades Destacadas</h2>
+      <div class="glass-card p-6 md:p-8 rounded-2xl shadow-lg" data-aos="fade-up">
+        <ul class="space-y-4">
+          <li class="flex items-start gap-4">
+            <i class="fas fa-tools text-primary text-xl mt-1"></i>
+            <div>
+              <strong class="block text-lg">Lenguajes y frameworks:</strong>
+              <span class="text-gray-600 dark:text-gray-400">JavaScript, PHP, HTML/CSS, Kotlin, Swift UI, SQL, React, Node.js, Next.js, Android Studio, JUnit</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <i class="fas fa-database text-primary text-xl mt-1"></i>
+            <div>
+              <strong class="block text-lg">Bases de datos:</strong>
+              <span class="text-gray-600 dark:text-gray-400">MySQL, PostgreSQL, MongoDB. Relacionales y no relacionales. Prisma ORM.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <i class="fas fa-headset text-primary text-xl mt-1"></i>
+            <div>
+              <strong class="block text-lg">Herramientas y entornos:</strong>
+              <span class="text-gray-600 dark:text-gray-400">Git, Linux, Windows, CRMs (Salesforce, Siebel, Plex25), Make, N8N, ChatGPT, Gemini AI</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <i class="fas fa-network-wired text-primary text-xl mt-1"></i>
+            <div>
+              <strong class="block text-lg">Networking y Hardware:</strong>
+              <span class="text-gray-600 dark:text-gray-400">TCP/IP, WAN/LAN, Mikrotik, Reparación y mantenimiento de equipos, Cámaras IP/WIFI</span>
+            </div>
+          </li>
+        </ul>
       </div>
-    </div>
+    </section>
 
-    <!-- Proyecto 3 -->
-    <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transform transition duration-300 hover:-translate-y-1" data-aos="fade-up">
-      <img src="https://i.imgur.com/lx1YuVE.png" alt="Mockup Turnos Técnico" class="w-full h-40 object-contain mb-3 rounded-lg bg-gray-100" loading="lazy" />
-      <div class="p-6">
-        <h3 class="text-xl font-semibold mb-2 flex items-center gap-2 text-gray-900">
-          <i class="fas fa-store text-green-600 transform transition duration-300 hover:scale-125"></i>
-          App de Gestión de Servicio Técnico
-        </h3>
-        <p class="text-gray-600 text-sm mb-2">🔧 <strong>Tecnologías:</strong> Kotlin, Firebase</p>
-        <p class="text-gray-600 text-sm mb-2">✅ Reserva y seguimiento de tareas por técnico.</p>
-        <p class="text-gray-600 text-sm mb-4">📊 Base para futura integración real.</p>
-        <a href="https://demos-interactivos.vercel.app/" target="_blank" class="inline-block mt-4 px-4 py-2 rounded-lg bg-green-600 text-white hover:bg-green-700 hover:text-white transition-colors duration-300 text-sm font-medium">
-          Ver demo
-        </a>
-      </div>
-    </div>
-
-    <!-- Proyecto 4 -->
-    <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transform transition duration-300 hover:-translate-y-1" data-aos="fade-up">
-      <img src="https://i.imgur.com/yNoW4gC.png" alt="Mockup Social AutoPost" class="w-full h-40 object-contain mb-3 rounded-lg bg-gray-100" loading="lazy"/>
-      <div class="p-6">
-        <h3 class="text-xl font-semibold mb-2 flex items-center gap-2 text-gray-900">
-          <i class="fas fa-prescription-bottle-alt text-pink-600 transform transition duration-300 hover:scale-125"></i>
-          AutoPost y Generador de ideas para Redes Sociales
-        </h3>
-        <p class="text-gray-600 text-sm mb-2">🔧 <strong>Tecnologías:</strong> Make, Instagram API, Notion</p>
-        <p class="text-gray-600 text-sm mb-2">✅ Publicación automática desde Sheets y Notion.</p>
-        <p class="text-gray-600 text-sm mb-4">📊 Ahorro de 5 horas/semana en marketing.</p>
-        <a href="https://demos-interactivos.vercel.app/" target="_blank" class="inline-block mt-4 px-4 py-2 rounded-lg bg-pink-600 text-white hover:bg-pink-700 hover:text-white transition-colors duration-300 text-sm font-medium">
-          Ver demo
-        </a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-  <section class="my-10">
-  <h2 class="text-2xl font-semibold mb-4" data-aos="fade-right">🏆 Certificaciones</h2>
-    <div class="card p-4 text-justify" data-aos="fade-up">
-      <p>Certificados en soporte técnico, redes y reparación de hardware. Formación continua en herramientas actuales</p>
-      <br>
-      <p><a href="https://github.com/marioaug/Certificados" target="_blank"><i class="fa-solid fa-certificate"></i> Certificados</a></p>
-    </div>
-  </section>
-
-  <section id="tecnologias" class="tech-marquee">
-  <div class="track">
-    <div class="item"><i class="fab fa-html5" title="HTML5"></i></div>
-    <div class="item"><i class="fab fa-css3-alt" title="CSS3"></i></div>
-    <div class="item"><i class="fab fa-js" title="JavaScript"></i></div>
-    <div class="item"><i class="fab fa-react" title="React"></i></div>
-    <div class="item"><i class="fab fa-node-js" title="Node.js"></i></div>
-    <div class="item"><i class="fas fa-database" title="MongoDB"></i></div>
-    <div class="item"><i class="fab fa-git-alt" title="Git"></i></div>
-    <!-- Repetidos para bucle -->
-    <div class="item"><i class="fab fa-html5"></i></div>
-    <div class="item"><i class="fab fa-css3-alt"></i></div>
-    <div class="item"><i class="fab fa-js"></i></div>
-    <div class="item"><i class="fab fa-react"></i></div>
-    <div class="item"><i class="fab fa-node-js"></i></div>
-    <div class="item"><i class="fas fa-database"></i></div>
-    <div class="item"><i class="fab fa-git-alt"></i></div>
-  </div>
-</section>
-
-  <section class="my-10">
-  <h2 class="text-2xl font-semibold mb-4" data-aos="fade-right"><i class="fa-solid fa-address-card"></i> Redes</h2>
-    <div class="card p-4 text-justify" data-aos="fade-up">
-      <p><a href="https://www.linkedin.com/in/mario-ballester-739b8951/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
-      <br>
-      <p><a href="https://wa.me/5493794339735?text=Hola%20Mario,%20me%20gustaría%20saber%20más%20sobre%20tu%20portfolio" target="_blank"><i class="fab fa-whatsapp"></i> Whatsapp</a></p>
-    </div>
-  </section>
-  
-  <section class="my-10">
-  <h2 class="text-2xl font-semibold mb-4" data-aos="fade-right">📔 CV - Link</h2>
-    <div class="card p-4 text-justify" data-aos="fade-up">
-      <p><a href="https://github.com/marioaug/CV-Link" target="_blank"><i class="fa-regular fa-file"></i> CV LINK</a></p>
-    </div>
-  </section>
-  
-  <section id="contacto" class="my-10">
-  <h2 class="text-2xl font-semibold mb-4" data-aos="fade-right">☎ Contacto</h2>
-    <div class="card p-4 text-justify" data-aos="fade-up">
+    <!-- Proyectos Destacados -->
+    <section id="experiencia" class="my-20 scroll-mt-24">
+      <h2 class="text-4xl font-bold mb-10 text-center text-gray-800 dark:text-white" data-aos="fade-down">🚀 Proyectos Destacados</h2>
       
-  <form action="https://formsubmit.co/mario_ballester@hotmail.com" method="POST" id="contact-form">
-  <input type="text" name="name" placeholder="Tu nombre" required />
-  <input type="email" name="email" placeholder="Tu correo electrónico" required />
-  <textarea name="message" placeholder="Tu mensaje" rows="5" required></textarea>
-  
-  <button type="submit">Enviar mensaje</button> <br>
-  <br> <p>📍 Corrientes Capital, Argentina - 3400</p>
-  </form>
-  <div id="form-message" class="hidden text-green-600 text-center mt-4">
-  ✅ ¡Gracias por tu mensaje! Te responderé pronto.
-  </div>
-  <!-- Script para mostrar mensaje al enviar -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Proyecto 1: miPOS Bester -->
+        <div class="bg-white dark:bg-darkcard rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://github.com/user-attachments/assets/bdc647b3-0dbd-4d03-81eb-6ca6c1f64f63" alt="miPOS Bester" class="w-full h-48 object-cover bg-gray-100 dark:bg-gray-800" loading="lazy" />
+          <div class="p-6 flex-grow flex flex-col">
+            <h3 class="text-xl font-bold mb-3 flex items-center gap-2 text-gray-900 dark:text-white">
+              <i class="fas fa-cash-register text-blue-500"></i> miPOS Bester
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">🔧 <strong>Tech:</strong> React, Node.js, Express, PostgreSQL, Prisma, Tailwind</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 flex-grow">✅ Sistema integral de Punto de Venta (POS) y gestión de servicio técnico. Control de stock, reportes y conciliación.</p>
+            <a href="https://github.com/marioaug/mipos-bester" target="_blank" class="text-center w-full block px-4 py-2 mt-auto rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors font-medium shadow-md">
+              Ver Repositorio
+            </a>
+          </div>
+        </div>
+
+        <!-- Proyecto 2: Resto Bester -->
+        <div class="bg-white dark:bg-darkcard rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" alt="Resto Bester" class="w-full h-48 object-cover bg-gray-100 dark:bg-gray-800" loading="lazy" />
+          <div class="p-6 flex-grow flex flex-col">
+            <h3 class="text-xl font-bold mb-3 flex items-center gap-2 text-gray-900 dark:text-white">
+              <i class="fas fa-utensils text-orange-500"></i> Resto Bester
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">🔧 <strong>Tech:</strong> Next.js, React, Prisma, Tailwind CSS</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 flex-grow">✅ Plataforma moderna para gestión de restaurantes. Optimiza la administración de mesas, comandas y flujo de pedidos.</p>
+            <a href="https://github.com/marioaug/resto-bester" target="_blank" class="text-center w-full block px-4 py-2 mt-auto rounded-lg bg-orange-600 text-white hover:bg-orange-700 transition-colors font-medium shadow-md">
+              Ver Repositorio
+            </a>
+          </div>
+        </div>
+
+        <!-- Proyecto 3: Soporte IT -->
+        <div class="bg-white dark:bg-darkcard rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col" data-aos="fade-up" data-aos-delay="300">
+          <img src="https://i.imgur.com/dWoqwzV.png" alt="Sistema Soporte IT" class="w-full h-48 object-contain p-2 bg-gray-100 dark:bg-gray-800" loading="lazy" />
+          <div class="p-6 flex-grow flex flex-col">
+            <h3 class="text-xl font-bold mb-3 flex items-center gap-2 text-gray-900 dark:text-white">
+              <i class="fas fa-briefcase text-purple-600"></i> Sistema Soporte IT
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">🔧 <strong>Tech:</strong> Make, Gmail API, Sheets, ChatGPT</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 flex-grow">✅ Automatización de tickets y respuestas por email. Redujo tareas repetitivas en un 60%.</p>
+            <a href="https://demos-interactivos.vercel.app/" target="_blank" class="text-center w-full block px-4 py-2 mt-auto rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-colors font-medium shadow-md">
+              Ver demo
+            </a>
+          </div>
+        </div>
+
+        <!-- Proyecto 4: Stock Simple -->
+        <div class="bg-white dark:bg-darkcard rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col" data-aos="fade-up" data-aos-delay="400">
+          <img src="https://i.imgur.com/7lnYZ0v.png" alt="Control de Stock" class="w-full h-48 object-contain p-2 bg-gray-100 dark:bg-gray-800" loading="lazy" />
+          <div class="p-6 flex-grow flex flex-col">
+            <h3 class="text-xl font-bold mb-3 flex items-center gap-2 text-gray-900 dark:text-white">
+              <i class="fas fa-hotel text-indigo-600"></i> Control de Stock Simple
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">🔧 <strong>Tech:</strong> React, Node.js, MongoDB</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 flex-grow">✅ ABM de productos con filtros y roles. Simula el inventario de una farmacia o comercio minorista.</p>
+            <a href="https://demos-interactivos.vercel.app/" target="_blank" class="text-center w-full block px-4 py-2 mt-auto rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 transition-colors font-medium shadow-md">
+              Ver demo
+            </a>
+          </div>
+        </div>
+
+        <!-- Proyecto 5: Gestión Servicio Técnico -->
+        <div class="bg-white dark:bg-darkcard rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col" data-aos="fade-up" data-aos-delay="500">
+          <img src="https://i.imgur.com/lx1YuVE.png" alt="App Gestión" class="w-full h-48 object-contain p-2 bg-gray-100 dark:bg-gray-800" loading="lazy" />
+          <div class="p-6 flex-grow flex flex-col">
+            <h3 class="text-xl font-bold mb-3 flex items-center gap-2 text-gray-900 dark:text-white">
+              <i class="fas fa-mobile-alt text-green-600"></i> App Servicio Técnico
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">🔧 <strong>Tech:</strong> Kotlin, Firebase</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 flex-grow">✅ Aplicación móvil nativa para la reserva y seguimiento de tareas asignadas a técnicos.</p>
+            <a href="https://demos-interactivos.vercel.app/" target="_blank" class="text-center w-full block px-4 py-2 mt-auto rounded-lg bg-green-600 text-white hover:bg-green-700 transition-colors font-medium shadow-md">
+              Ver demo
+            </a>
+          </div>
+        </div>
+
+        <!-- Proyecto 6: AutoPost RRSS -->
+        <div class="bg-white dark:bg-darkcard rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col" data-aos="fade-up" data-aos-delay="600">
+          <img src="https://i.imgur.com/yNoW4gC.png" alt="AutoPost RRSS" class="w-full h-48 object-contain p-2 bg-gray-100 dark:bg-gray-800" loading="lazy"/>
+          <div class="p-6 flex-grow flex flex-col">
+            <h3 class="text-xl font-bold mb-3 flex items-center gap-2 text-gray-900 dark:text-white">
+              <i class="fas fa-share-alt text-pink-600"></i> AutoPost Redes Sociales
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">🔧 <strong>Tech:</strong> Make, Instagram API, Notion</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 flex-grow">✅ Automatiza publicaciones desde Notion/Sheets hacia Instagram. Ahorro sustancial de tiempo.</p>
+            <a href="https://demos-interactivos.vercel.app/" target="_blank" class="text-center w-full block px-4 py-2 mt-auto rounded-lg bg-pink-600 text-white hover:bg-pink-700 transition-colors font-medium shadow-md">
+              Ver demo
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Tecnologías (Marquee) -->
+    <section class="py-10 mb-16 rounded-xl bg-white dark:bg-darkcard shadow-sm border border-gray-200 dark:border-gray-800 max-w-4xl mx-auto overflow-hidden">
+      <div class="tech-marquee text-5xl text-gray-400 dark:text-gray-600">
+        <div class="track gap-16 px-8 items-center">
+          <i class="fab fa-html5 hover:text-orange-500 transition-colors" title="HTML5"></i>
+          <i class="fab fa-css3-alt hover:text-blue-500 transition-colors" title="CSS3"></i>
+          <i class="fab fa-js hover:text-yellow-400 transition-colors" title="JavaScript"></i>
+          <i class="fab fa-react hover:text-cyan-400 transition-colors" title="React"></i>
+          <i class="fab fa-node-js hover:text-green-500 transition-colors" title="Node.js"></i>
+          <i class="fas fa-database hover:text-blue-400 transition-colors" title="Databases"></i>
+          <i class="fab fa-git-alt hover:text-orange-600 transition-colors" title="Git"></i>
+          <!-- Repeat para bucle -->
+          <i class="fab fa-html5 hover:text-orange-500 transition-colors"></i>
+          <i class="fab fa-css3-alt hover:text-blue-500 transition-colors"></i>
+          <i class="fab fa-js hover:text-yellow-400 transition-colors"></i>
+          <i class="fab fa-react hover:text-cyan-400 transition-colors"></i>
+          <i class="fab fa-node-js hover:text-green-500 transition-colors"></i>
+          <i class="fas fa-database hover:text-blue-400 transition-colors"></i>
+          <i class="fab fa-git-alt hover:text-orange-600 transition-colors"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- Links y Contacto Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 max-w-4xl mx-auto">
+      <!-- Sección Redes & CV -->
+      <section>
+        <h2 class="text-2xl font-bold mb-4 border-l-4 border-primary pl-4" data-aos="fade-right">Redes & CV</h2>
+        <div class="glass-card p-6 rounded-2xl shadow-lg flex flex-col gap-5 h-full" data-aos="fade-up">
+          <a href="https://www.linkedin.com/in/mario-ballester-739b8951/" target="_blank" class="flex items-center gap-3 text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+            <div class="w-10 h-10 flex items-center justify-center bg-blue-100 dark:bg-blue-900/30 rounded-full"><i class="fab fa-linkedin text-2xl text-blue-600"></i></div>
+            LinkedIn Profesional
+          </a>
+          <a href="https://wa.me/5493794339735?text=Hola%20Mario,%20me%20gustaría%20saber%20más%20sobre%20tu%20portfolio" target="_blank" class="flex items-center gap-3 text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-green-500 dark:hover:text-green-400 transition-colors">
+            <div class="w-10 h-10 flex items-center justify-center bg-green-100 dark:bg-green-900/30 rounded-full"><i class="fab fa-whatsapp text-2xl text-green-500"></i></div>
+            Contacto por WhatsApp
+          </a>
+          <div class="border-t border-gray-200 dark:border-gray-700 my-1"></div>
+          <a href="https://github.com/marioaug/CV-Link" target="_blank" class="flex items-center gap-3 text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-red-500 transition-colors">
+            <div class="w-10 h-10 flex items-center justify-center bg-red-100 dark:bg-red-900/30 rounded-full"><i class="fa-solid fa-file-pdf text-2xl text-red-500"></i></div>
+            Descargar / Ver CV
+          </a>
+          <a href="https://github.com/marioaug/Certificados" target="_blank" class="flex items-center gap-3 text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-yellow-500 transition-colors">
+            <div class="w-10 h-10 flex items-center justify-center bg-yellow-100 dark:bg-yellow-900/30 rounded-full"><i class="fa-solid fa-certificate text-2xl text-yellow-500"></i></div>
+            Ver Certificados
+          </a>
+        </div>
+      </section>
+
+      <!-- Contacto -->
+      <section id="contacto" class="scroll-mt-24">
+        <h2 class="text-2xl font-bold mb-4 border-l-4 border-primary pl-4" data-aos="fade-right">Contacto Directo</h2>
+        <div class="glass-card p-6 rounded-2xl shadow-lg h-full" data-aos="fade-up">
+          <form action="https://formsubmit.co/mario_ballester@hotmail.com" method="POST" id="contact-form" class="flex flex-col gap-4 h-full">
+            <input type="text" name="name" placeholder="Tu nombre" required class="p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary transition-shadow">
+            <input type="email" name="email" placeholder="Tu correo electrónico" required class="p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary transition-shadow">
+            <textarea name="message" placeholder="Tu mensaje" rows="3" required class="p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary transition-shadow resize-none flex-grow"></textarea>
+            <button type="submit" class="bg-primary hover:bg-[#009299] text-white font-bold py-3 rounded-lg transition-colors shadow-md hover:shadow-lg mt-auto">
+              Enviar Mensaje <i class="fas fa-paper-plane ml-2"></i>
+            </button>
+            <p class="text-sm text-center text-gray-500 mt-2"><i class="fas fa-map-marker-alt"></i> Corrientes Capital, Argentina - 3400</p>
+          </form>
+          <div id="form-message" class="hidden text-green-600 font-medium text-center mt-4 bg-green-50 p-3 rounded-lg">
+            ✅ ¡Gracias por tu mensaje! Te responderé pronto.
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <footer class="bg-white dark:bg-darkcard border-t border-gray-200 dark:border-gray-800 py-8 mt-10">
+    <div class="max-w-4xl mx-auto text-center px-4">
+      <button id="scrollTopWrapper" class="mb-6 flex items-center justify-center gap-2 mx-auto text-primary hover:text-blue-500 font-bold transition-transform hover:-translate-y-1">
+        <i class="fa-solid fa-circle-up text-2xl"></i> VOLVER ARRIBA
+      </button>
+      <p class="text-gray-600 dark:text-gray-400 font-medium mb-4">&copy; 2026 Mario Ballester. Todos los derechos reservados.</p>
+      <div class="flex justify-center gap-6">
+        <a href="https://github.com/marioaug" target="_blank" class="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors transform hover:scale-110">
+          <i class="fab fa-github text-2xl"></i>
+        </a>
+        <a href="https://linkedin.com/in/marioballester10" target="_blank" class="text-gray-500 hover:text-blue-600 transition-colors transform hover:scale-110">
+          <i class="fab fa-linkedin text-2xl"></i>
+        </a>
+        <a href="mailto:mario_ballester@hotmail.com" class="text-gray-500 hover:text-red-500 transition-colors transform hover:scale-110">
+          <i class="fas fa-envelope text-2xl"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
+    // Iniciar Animaciones
+    AOS.init({ once: true, offset: 100 });
+
+    // Lógica del modo oscuro con Tailwind
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const rootElement = document.documentElement;
+    
+    // Configuración inicial del tema
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      rootElement.classList.add('dark');
+    } else {
+      rootElement.classList.remove('dark');
+    }
+
+    // Toggle de tema
+    themeToggleBtn.addEventListener('click', () => {
+      rootElement.classList.toggle('dark');
+      if (rootElement.classList.contains('dark')) {
+        localStorage.theme = 'dark';
+      } else {
+        localStorage.theme = 'light';
+      }
+    });
+
+    // Formulario de Contacto
     document.getElementById("contact-form").addEventListener("submit", function(e) {
       e.preventDefault();
-
       const form = e.target;
       const formData = new FormData(form);
+
+      const btn = form.querySelector('button[type="submit"]');
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+      btn.disabled = true;
 
       fetch(form.action, {
         method: form.method,
         body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
+        headers: { 'Accept': 'application/json' }
       }).then(response => {
         if (response.ok) {
           document.getElementById("form-message").classList.remove("hidden");
@@ -594,58 +390,19 @@ Camaras IP/WIFI</li>
         }
       }).catch(error => {
         alert("Error al enviar el formulario.");
+      }).finally(() => {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+        setTimeout(() => {
+            document.getElementById("form-message").classList.add("hidden");
+        }, 5000);
       });
     });
-  </script>    
-    </div>
-  </section>
 
-  <div id="scrollTopContainer">
-  <button id="scrollTopWrapper" title="Volver arriba" aria-label="Volver arriba">
-    <i class="fa-solid fa-chevron-up"></i>
-    <span>VOLVER ARRIBA</span>
-  </button>
-  </div>
-   
- <script>
-  document.getElementById("scrollTopWrapper").addEventListener("click", function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
- </script>
-  
-  <footer class="footer">
-  <div class="footer-content">
-    <p>&copy; 2025 Mario Ballester. Todos los derechos reservados.</p>
-    <div class="social-links">
-      <a href="https://github.com/marioaug" target="_blank" aria-label="GitHub">
-        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 0.3a12 12 0 00-3.8 23.4c0.6 0.1 0.8-0.2 0.8-0.5v-1.9c-3.3 0.7-4-1.6-4-1.6-0.6-1.4-1.3-1.8-1.3-1.8-1.1-0.7 0.1-0.7 0.1-0.7 1.2 0.1 1.8 1.2 1.8 1.2 1.1 1.9 2.9 1.4 3.6 1.1 0.1-0.8 0.4-1.4 0.7-1.7-2.7-0.3-5.5-1.4-5.5-6a4.6 4.6 0 011.2-3.2 4.3 4.3 0 01.1-3.2s1-0.3 3.3 1.2a11.4 11.4 0 016 0c2.2-1.5 3.3-1.2 3.3-1.2a4.3 4.3 0 01.1 3.2 4.6 4.6 0 011.2 3.2c0 4.6-2.8 5.7-5.5 6 0.4 0.4 0.8 1.1 0.8 2.2v3.2c0 0.3 0.2 0.6 0.8 0.5A12 12 0 0012 0.3z"/>
-        </svg>
-      </a>
-      <a href="https://linkedin.com/in/marioballester10" target="_blank" aria-label="LinkedIn">
-        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.05-1.86-3.05-1.86 0-2.15 1.45-2.15 2.95v5.67h-3.55v-11.5h3.41v1.57h.05c.48-.9 1.65-1.86 3.39-1.86 3.63 0 4.3 2.39 4.3 5.5v6.29zm-15.75-13.1c-1.14 0-2.07-.93-2.07-2.07 0-1.15.93-2.08 2.07-2.08 1.15 0 2.08.93 2.08 2.08 0 1.14-.93 2.07-2.08 2.07zm1.78 13.1h-3.55v-11.5h3.55v11.5zm17.52-20.45h-21.5c-.83 0-1.5.67-1.5 1.5v21.5c0 .83.67 1.5 1.5 1.5h21.5c.83 0 1.5-.67 1.5-1.5v-21.5c0-.83-.67-1.5-1.5-1.5z"/>
-        </svg>
-      </a>
-      <a href="mailto:mario_ballester@hotmail.com" target="_blank" aria-label="Email">
-        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 13.065l-11.99-7.065h23.98l-11.99 7.065zm0 2.252l-12-7.065v12.748h24v-12.748l-12 7.065z"/>
-        </svg>
-      </a>
-    </div>
-  </div>
-  </footer>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-
-    function toggleTheme() {
-      const currentTheme = document.documentElement.getAttribute("data-theme");
-      document.documentElement.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
-    }
+    // Scroll to Top
+    document.getElementById("scrollTopWrapper").addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   </script>
-  
 </body>
-
 </html>
