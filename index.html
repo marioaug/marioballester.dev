@@ -4,7 +4,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>💻 Portfolio - Mario Ballester</title>
+  <title>💻 Portfolio - Mario Ballester | Fullstack Developer & Soporte IT</title>
+  <meta name="description" content="Portfolio profesional de Mario Ballester. Desarrollo de software Fullstack, SaaS comerciales, ERPs con facturación ARCA (AFIP), Mercado Pago, catálogos web y consultores de precios para retail." />
+  
+  <!-- OpenGraph / Redes Sociales -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://marioballester.dev/" />
+  <meta property="og:title" content="Mario Ballester | Fullstack Developer & Soluciones IT" />
+  <meta property="og:description" content="Desarrollo de SaaS y ERPs con Next.js y React, integración oficial ARCA/AFIP y Mercado Pago, Catálogos Web y Consultores de Precios Retail." />
+  <meta property="og:image" content="https://i.imgur.com/LIiEZCy.jpeg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mario Ballester | Fullstack Developer & Soluciones IT" />
+  <meta name="twitter:description" content="Desarrollo de SaaS y ERPs con Next.js y React, integración oficial ARCA/AFIP y Mercado Pago, Catálogos Web y Consultores de Precios Retail." />
+  <meta name="twitter:image" content="https://i.imgur.com/LIiEZCy.jpeg" />
+
   <link rel="icon" href="https://i.imgur.com/X3aLypU.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -21,6 +34,7 @@
           },
           colors: {
             primary: '#00adb5',
+            primaryHover: '#009299',
             darkbg: '#121212',
             darkcard: '#1e1e1e',
           }
@@ -72,18 +86,35 @@
      0% { transform: translateX(0); }
      100% { transform: translateX(-50%); }
     }
+
+    /* Modal Fade & Backdrop */
+    .modal-backdrop {
+      background-color: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    /* Badges */
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
   </style>
 </head>
 
 <body class="bg-gray-50 text-gray-800 dark:bg-darkbg dark:text-gray-200 pt-20">
 
   <!-- Navbar -->
-  <nav class="fixed top-0 w-full bg-gray-900/95 backdrop-blur-sm z-50 py-3 shadow-lg transition-colors">
+  <nav class="fixed top-0 w-full bg-gray-900/95 backdrop-blur-sm z-40 py-3 shadow-lg transition-colors">
     <div class="max-w-6xl mx-auto px-4 flex justify-between items-center relative">
       <ul class="flex space-x-4 md:space-x-8 mx-auto md:mx-0">
-        <li><a href="#perfil" class="text-gray-200 hover:text-blue-400 font-medium transition-all flex items-center gap-2"><i class="fas fa-user"></i> <span class="hidden sm:inline">Perfil</span></a></li>
-        <li><a href="#experiencia" class="text-gray-200 hover:text-blue-400 font-medium transition-all flex items-center gap-2"><i class="fas fa-briefcase"></i> <span class="hidden sm:inline">Proyectos</span></a></li>
-        <li><a href="#contacto" class="text-gray-200 hover:text-blue-400 font-medium transition-all flex items-center gap-2"><i class="fas fa-envelope"></i> <span class="hidden sm:inline">Contacto</span></a></li>
+        <li><a href="#perfil" class="text-gray-200 hover:text-cyan-400 font-medium transition-all flex items-center gap-2"><i class="fas fa-user"></i> <span class="hidden sm:inline">Perfil</span></a></li>
+        <li><a href="#experiencia" class="text-gray-200 hover:text-cyan-400 font-medium transition-all flex items-center gap-2"><i class="fas fa-briefcase"></i> <span class="hidden sm:inline">Proyectos</span></a></li>
+        <li><a href="#contacto" class="text-gray-200 hover:text-cyan-400 font-medium transition-all flex items-center gap-2"><i class="fas fa-envelope"></i> <span class="hidden sm:inline">Contacto</span></a></li>
       </ul>
       <button id="theme-toggle" class="absolute right-0 text-2xl hover:scale-110 transition-transform focus:outline-none" title="Cambiar tema">
         🌓
@@ -93,10 +124,17 @@
   
   <!-- Hero Section -->
   <header class="hero-bg py-16 px-4 mt-8 rounded-3xl shadow-xl max-w-4xl mx-auto text-center transition-all duration-300" data-aos="zoom-in">
-    <img src="https://i.imgur.com/LIiEZCy.jpeg" alt="Mario Ballester" class="w-40 h-40 rounded-full border-4 border-indigo-500 shadow-2xl mx-auto object-cover hover:scale-105 transition-transform duration-300">
+    <img src="https://i.imgur.com/LIiEZCy.jpeg" alt="Mario Ballester" class="w-40 h-40 rounded-full border-4 border-cyan-500 shadow-2xl mx-auto object-cover hover:scale-105 transition-transform duration-300">
     <h1 class="text-4xl md:text-5xl font-bold mt-6 text-gray-900 dark:text-white">Mario Ballester</h1>
     <p class="text-lg md:text-xl font-medium text-gray-700 dark:text-gray-300 mt-2 tracking-wide">💼 PORTFOLIO PROFESIONAL</p>
     <p class="text-md text-gray-600 dark:text-gray-400 mt-2 font-medium">⚙ Soporte Técnico IT | 🖥 Desarrollador Web Fullstack</p>
+    <div class="mt-5 flex justify-center gap-3 flex-wrap">
+      <span class="badge-pill bg-cyan-100 text-cyan-800 dark:bg-cyan-950 dark:text-cyan-300 border border-cyan-300 dark:border-cyan-800"><i class="fas fa-code mr-1.5"></i> Next.js & React</span>
+      <span class="badge-pill bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300 border border-blue-300 dark:border-blue-800"><i class="fas fa-file-invoice-dollar mr-1.5"></i> Facturación ARCA (AFIP)</span>
+      <span class="badge-pill bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800"><i class="fas fa-credit-card mr-1.5"></i> Mercado Pago QR</span>
+      <span class="badge-pill bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 border border-amber-300 dark:border-amber-800"><i class="fas fa-store mr-1.5"></i> Catálogos Web & Cloudinary</span>
+      <span class="badge-pill bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300 border border-purple-300 dark:border-purple-800"><i class="fas fa-robot mr-1.5"></i> AI & Automatización</span>
+    </div>
   </header>
 
   <main class="max-w-6xl mx-auto px-4">
@@ -106,9 +144,9 @@
       <h2 class="text-3xl font-bold mb-6 border-l-4 border-primary pl-4" data-aos="fade-right">Perfil</h2>
       <div class="glass-card p-6 md:p-8 rounded-2xl shadow-lg" data-aos="fade-up">
         <p class="text-lg leading-relaxed text-justify">
-          "Soy un profesional apasionado por la tecnología, con experiencia en soporte técnico, desarrollo web y automatización de procesos. 
-          Me especializo en crear soluciones eficientes usando herramientas como React, Node.js y plataformas No Code como Make y N8N. 
-          Busco siempre integrar nuevas habilidades que mejoren la experiencia de usuarios y optimicen tareas en entornos reales".
+          "Soy un profesional apasionado por la tecnología, con sólida experiencia en soporte técnico, desarrollo de software fullstack y automatización de procesos. 
+          Me especializo en diseñar y construir plataformas SaaS, ERPs y sistemas comerciales con <strong>Next.js, React, Node.js, TypeScript y Prisma ORM</strong>, implementando integraciones críticas en entornos reales: <strong>Facturación Electrónica oficial con ARCA (ex-AFIP), pasarelas de pago con Mercado Pago (checkout y QR), almacenamiento multimedia en Cloudinary y correos transaccionales con Resend</strong>. 
+          Además, desarrollo <strong>Consultores de Precios para retail en modo Kiosco</strong> y soluciones de automatización con IA que resuelven problemas operativos con alto valor comercial."
         </p>
       </div>
     </section>
@@ -122,28 +160,35 @@
             <i class="fas fa-tools text-primary text-xl mt-1"></i>
             <div>
               <strong class="block text-lg">Lenguajes y frameworks:</strong>
-              <span class="text-gray-600 dark:text-gray-400">JavaScript, PHP, HTML/CSS, Kotlin, Swift UI, SQL, React, Node.js, Next.js, Android Studio, JUnit</span>
+              <span class="text-gray-600 dark:text-gray-400">TypeScript, JavaScript, Next.js (App Router), React, Node.js, Express, PHP, HTML5/CSS3, Tailwind CSS, Kotlin</span>
             </div>
           </li>
           <li class="flex items-start gap-4">
             <i class="fas fa-database text-primary text-xl mt-1"></i>
             <div>
-              <strong class="block text-lg">Bases de datos:</strong>
-              <span class="text-gray-600 dark:text-gray-400">MySQL, PostgreSQL, MongoDB. Relacionales y no relacionales. Prisma ORM.</span>
+              <strong class="block text-lg">Bases de datos & ORM:</strong>
+              <span class="text-gray-600 dark:text-gray-400">PostgreSQL, MongoDB Atlas, MySQL, SQLite3, Prisma ORM, Sequelize, Mongoose</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <i class="fas fa-file-invoice-dollar text-primary text-xl mt-1"></i>
+            <div>
+              <strong class="block text-lg">Integraciones Críticas & Pasarelas:</strong>
+              <span class="text-gray-600 dark:text-gray-400">Facturación Electrónica ARCA (AFIP WebServices, certificados .crt/.key, CAE), Mercado Pago SDK (QR dinámico), Cloudinary API, Resend, Gemini AI SDK, Zod</span>
             </div>
           </li>
           <li class="flex items-start gap-4">
             <i class="fas fa-headset text-primary text-xl mt-1"></i>
             <div>
-              <strong class="block text-lg">Herramientas y entornos:</strong>
-              <span class="text-gray-600 dark:text-gray-400">Git, Linux, Windows, CRMs (Salesforce, Siebel, Plex25), Make, N8N, ChatGPT, Gemini AI</span>
+              <strong class="block text-lg">Herramientas, Despliegue y Automatización:</strong>
+              <span class="text-gray-600 dark:text-gray-400">Git, GitHub, DigitalOcean, Docker, PM2, Make, N8N, OpenAI / ChatGPT API, Linux, Windows, CRMs</span>
             </div>
           </li>
           <li class="flex items-start gap-4">
             <i class="fas fa-network-wired text-primary text-xl mt-1"></i>
             <div>
-              <strong class="block text-lg">Networking y Hardware:</strong>
-              <span class="text-gray-600 dark:text-gray-400">TCP/IP, WAN/LAN, Mikrotik, Reparación y mantenimiento de equipos, Cámaras IP/WIFI</span>
+              <strong class="block text-lg">Networking, Hardware & Terminales Kiosco:</strong>
+              <span class="text-gray-600 dark:text-gray-400">Consultores de precios Kiosco (Raspberry Pi / Touchscreen), lectores de código de barras USB/láser, Mikrotik, TCP/IP, WAN/LAN</span>
             </div>
           </li>
         </ul>
@@ -152,96 +197,155 @@
 
     <!-- Proyectos Destacados -->
     <section id="experiencia" class="my-20 scroll-mt-24">
-      <h2 class="text-4xl font-bold mb-10 text-center text-gray-800 dark:text-white" data-aos="fade-down">🚀 Proyectos Destacados</h2>
+      <h2 class="text-4xl font-bold mb-4 text-center text-gray-800 dark:text-white" data-aos="fade-down">🚀 Proyectos Destacados</h2>
+      <p class="text-center text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8" data-aos="fade-up">
+        Soluciones comerciales en producción y plataformas escalables con integraciones fiscales, pasarelas de pago y hardware en el mundo real.
+      </p>
+
+      <!-- Filtros por Categoría -->
+      <div class="flex justify-center flex-wrap gap-2 mb-10" data-aos="fade-up">
+        <button class="filter-btn active px-4 py-2 rounded-full text-sm font-semibold transition-all shadow-sm bg-primary text-white" data-filter="all">
+          Todos
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold transition-all shadow-sm bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-700" data-filter="saas">
+          SaaS & Gestión
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold transition-all shadow-sm bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-700" data-filter="retail">
+          Hardware & Retail
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold transition-all shadow-sm bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-700" data-filter="automation">
+          Automatizaciones & AI
+        </button>
+      </div>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         
-        <!-- Proyecto 1: miPOS Bester -->
-        <div class="bg-white dark:bg-darkcard rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col" data-aos="fade-up" data-aos-delay="100">
-          <img src="https://i.imgur.com/QWQx95h.gif" alt="miPOS Bester" class="w-full h-48 object-cover bg-gray-100 dark:bg-gray-800" loading="lazy" />
+        <!-- PROYECTO 1: Bester Manager -->
+        <div class="project-card bg-white dark:bg-darkcard rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:-translate-y-2 overflow-hidden border border-cyan-100 dark:border-cyan-950 flex flex-col relative" data-category="saas" data-aos="fade-up" data-aos-delay="100">
+          <div class="absolute top-3 right-3 z-10">
+            <span class="badge-pill bg-emerald-500 text-white shadow-md">En Producción</span>
+          </div>
+          <img src="assets/bester-manager.jpg" alt="Bester Manager" class="w-full h-48 object-cover bg-gray-100 dark:bg-gray-800" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'" />
           <div class="p-6 flex-grow flex flex-col">
-            <h3 class="text-xl font-bold mb-3 flex items-center gap-2 text-gray-900 dark:text-white">
-              <i class="fas fa-cash-register text-blue-500"></i> miPOS Bester
+            <div class="flex items-center gap-2 mb-2 flex-wrap">
+              <span class="badge-pill bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 text-xs">ARCA (AFIP) Oficial</span>
+              <span class="badge-pill bg-cyan-100 dark:bg-cyan-900/50 text-cyan-700 dark:text-cyan-300 text-xs">Mercado Pago</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2 flex items-center gap-2 text-gray-900 dark:text-white">
+              <i class="fas fa-layer-group text-primary"></i> Bester Manager
             </h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">🔧 <strong>Tech:</strong> React, Node.js, Express, PostgreSQL, Prisma, Tailwind</p>
-            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 flex-grow">✅ Sistema integral de Punto de Venta (POS) y gestión de servicio técnico. Control de stock, reportes y conciliación.</p>
-            <a href="https://github.com/marioaug/mipos-bester" target="_blank" class="text-center w-full block px-4 py-2 mt-auto rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors font-medium shadow-md">
-              Ver Repositorio
-            </a>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">🔧 <strong>Tech:</strong> Next.js 16, React 19, TypeScript, Prisma, ARCA SDK, Mercado Pago, Recharts</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 flex-grow">✅ Plataforma SaaS integral de administración y recaudación. Facturación fiscal electrónica oficial con ARCA (CAE), cobranzas con Mercado Pago y métricas en tiempo real.</p>
+            <button onclick="openModal('modal-bester-manager')" class="text-center w-full block px-4 py-2.5 mt-auto rounded-lg bg-primary hover:bg-primaryHover text-white transition-all font-medium shadow-md hover:shadow-lg flex items-center justify-center gap-2">
+              <i class="fas fa-eye"></i> Ver Detalles & Demo
+            </button>
           </div>
         </div>
 
-        <!-- Proyecto 2: Resto Bester -->
-        <div class="bg-white dark:bg-darkcard rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col" data-aos="fade-up" data-aos-delay="200">
+        <!-- PROYECTO 2: miPOS Bester (Comercial, ERP, POS, Catálogo Web) -->
+        <div class="project-card bg-white dark:bg-darkcard rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:-translate-y-2 overflow-hidden border border-blue-100 dark:border-blue-950 flex flex-col relative" data-category="saas" data-aos="fade-up" data-aos-delay="150">
+          <div class="absolute top-3 right-3 z-10">
+            <span class="badge-pill bg-blue-600 text-white shadow-md">SaaS Comercial</span>
+          </div>
+          <img src="https://i.imgur.com/QWQx95h.gif" alt="miPOS Bester" class="w-full h-48 object-cover bg-gray-100 dark:bg-gray-800" loading="lazy" />
+          <div class="p-6 flex-grow flex flex-col">
+            <div class="flex items-center gap-2 mb-2 flex-wrap">
+              <span class="badge-pill bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 text-xs">ARCA / AFIP</span>
+              <span class="badge-pill bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 text-xs">Mercado Pago QR</span>
+              <span class="badge-pill bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-300 text-xs">Catálogo Web</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2 flex items-center gap-2 text-gray-900 dark:text-white">
+              <i class="fas fa-cash-register text-blue-500"></i> miPOS Bester
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">🔧 <strong>Tech:</strong> Next.js, Node.js, PostgreSQL, Prisma, ARCA, MP, Cloudinary, Resend, Gemini</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 flex-grow">✅ ERP & Punto de Venta ágil con Catálogo Web en vivo. Facturación oficial ARCA, cobro por QR, taller técnico con bloqueo por deuda y fotos en Cloudinary.</p>
+            <button onclick="openModal('modal-mipos')" class="text-center w-full block px-4 py-2.5 mt-auto rounded-lg bg-blue-600 hover:bg-blue-700 text-white transition-all font-medium shadow-md hover:shadow-lg flex items-center justify-center gap-2">
+              <i class="fas fa-play-circle"></i> Ver Detalles & Demo
+            </button>
+          </div>
+        </div>
+
+        <!-- PROYECTO 3: Verificador de Precios Interactivo (Retail & Farmacias) -->
+        <div class="project-card bg-white dark:bg-darkcard rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:-translate-y-2 overflow-hidden border border-emerald-100 dark:border-emerald-950 flex flex-col relative" data-category="retail" data-aos="fade-up" data-aos-delay="200">
+          <div class="absolute top-3 right-3 z-10">
+            <span class="badge-pill bg-purple-600 text-white shadow-md">Hardware + Software</span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1576602976047-174e57a47881?auto=format&fit=crop&w=800&q=80" alt="Verificador de Precios Interactivo" class="w-full h-48 object-cover bg-gray-100 dark:bg-gray-800" loading="lazy" />
+          <div class="p-6 flex-grow flex flex-col">
+            <div class="flex items-center gap-2 mb-2 flex-wrap">
+              <span class="badge-pill bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 text-xs">Modo Kiosco Retail</span>
+              <span class="badge-pill bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 text-xs">Offline Fallback</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2 flex items-center gap-2 text-gray-900 dark:text-white">
+              <i class="fas fa-barcode text-emerald-500"></i> Verificador de Precios
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">🔧 <strong>Tech:</strong> React, Node.js, Express, MongoDB Atlas, SQLite3, Lector Láser USB, ERP XML</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 flex-grow">✅ Terminal interactiva desarrollada para cadenas retail de farmacias. Modo Kiosco táctil con escáner óptico, screensaver publicitario y arquitectura híbrida con respaldo offline.</p>
+            <button onclick="openModal('modal-verificador')" class="text-center w-full block px-4 py-2.5 mt-auto rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white transition-all font-medium shadow-md hover:shadow-lg flex items-center justify-center gap-2">
+              <i class="fas fa-microchip"></i> Ver Arquitectura & Demo
+            </button>
+          </div>
+        </div>
+
+        <!-- PROYECTO 4: Resto Bester -->
+        <div class="project-card bg-white dark:bg-darkcard rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col relative" data-category="saas" data-aos="fade-up" data-aos-delay="250">
+          <div class="absolute top-3 right-3 z-10">
+            <span class="badge-pill bg-orange-600 text-white shadow-md">Comercial</span>
+          </div>
           <img src="https://i.imgur.com/KxOdk4z.png" alt="Resto Bester" class="w-full h-48 object-cover bg-gray-100 dark:bg-gray-800" loading="lazy" />
           <div class="p-6 flex-grow flex flex-col">
             <h3 class="text-xl font-bold mb-3 flex items-center gap-2 text-gray-900 dark:text-white">
               <i class="fas fa-utensils text-orange-500"></i> Resto Bester
             </h3>
             <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">🔧 <strong>Tech:</strong> Next.js, React, Prisma, Tailwind CSS</p>
-            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 flex-grow">✅ Plataforma moderna para gestión de restaurantes. Optimiza la administración de mesas, comandas y flujo de pedidos.</p>
-            <a href="https://github.com/marioaug/resto-bester" target="_blank" class="text-center w-full block px-4 py-2 mt-auto rounded-lg bg-orange-600 text-white hover:bg-orange-700 transition-colors font-medium shadow-md">
-              Ver Repositorio
-            </a>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 flex-grow">✅ Plataforma gastronómica moderna para restaurantes y bares. Gestión visual de mesas, comanderas en tiempo real y flujo de pedidos a cocina.</p>
+            <button onclick="openModal('modal-resto')" class="text-center w-full block px-4 py-2.5 mt-auto rounded-lg bg-orange-600 hover:bg-orange-700 text-white transition-all font-medium shadow-md hover:shadow-lg flex items-center justify-center gap-2">
+              <i class="fas fa-utensils"></i> Ver Detalles & Demo
+            </button>
           </div>
         </div>
 
-        <!-- Proyecto 3: Soporte IT -->
-        <div class="bg-white dark:bg-darkcard rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col" data-aos="fade-up" data-aos-delay="300">
+        <!-- PROYECTO 5: Sistema Soporte IT & Automatización -->
+        <div class="project-card bg-white dark:bg-darkcard rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col" data-category="automation" data-aos="fade-up" data-aos-delay="300">
           <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Sistema Soporte IT" class="w-full h-48 object-cover bg-gray-100 dark:bg-gray-800" loading="lazy" />
           <div class="p-6 flex-grow flex flex-col">
             <h3 class="text-xl font-bold mb-3 flex items-center gap-2 text-gray-900 dark:text-white">
-              <i class="fas fa-briefcase text-purple-600"></i> Sistema Soporte IT
+              <i class="fas fa-robot text-purple-600"></i> Automatización Soporte IT
             </h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">🔧 <strong>Tech:</strong> Make, Gmail API, Sheets, ChatGPT</p>
-            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 flex-grow">✅ Automatización de tickets y respuestas por email. Redujo tareas repetitivas en un 60%.</p>
-            <a href="https://demos-interactivos.vercel.app/" target="_blank" class="text-center w-full block px-4 py-2 mt-auto rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-colors font-medium shadow-md">
-              Ver demo
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">🔧 <strong>Tech:</strong> Make, N8N, Gmail API, Sheets, ChatGPT / Gemini</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 flex-grow">✅ Automatización inteligente de tickets y respuestas por correo con modelos de IA. Reducción demostrada de tareas repetitivas en un 60%.</p>
+            <a href="https://demos-interactivos.vercel.app/" target="_blank" class="text-center w-full block px-4 py-2.5 mt-auto rounded-lg bg-purple-600 hover:bg-purple-700 text-white transition-all font-medium shadow-md hover:shadow-lg flex items-center justify-center gap-2">
+              <i class="fas fa-external-link-alt"></i> Ver Demo Interactiva
             </a>
           </div>
         </div>
 
-        <!-- Proyecto 4: Stock Simple -->
-        <div class="bg-white dark:bg-darkcard rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col" data-aos="fade-up" data-aos-delay="400">
-          <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=80" alt="Control de Stock" class="w-full h-48 object-cover bg-gray-100 dark:bg-gray-800" loading="lazy" />
-          <div class="p-6 flex-grow flex flex-col">
-            <h3 class="text-xl font-bold mb-3 flex items-center gap-2 text-gray-900 dark:text-white">
-              <i class="fas fa-hotel text-indigo-600"></i> Control de Stock Simple
-            </h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">🔧 <strong>Tech:</strong> React, Node.js, MongoDB</p>
-            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 flex-grow">✅ ABM de productos con filtros y roles. Simula el inventario de una farmacia o comercio minorista.</p>
-            <a href="https://demos-interactivos.vercel.app/" target="_blank" class="text-center w-full block px-4 py-2 mt-auto rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 transition-colors font-medium shadow-md">
-              Ver demo
-            </a>
-          </div>
-        </div>
-
-        <!-- Proyecto 5: Gestión Servicio Técnico -->
-        <div class="bg-white dark:bg-darkcard rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col" data-aos="fade-up" data-aos-delay="500">
+        <!-- PROYECTO 6: App Servicio Técnico -->
+        <div class="project-card bg-white dark:bg-darkcard rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col" data-category="retail" data-aos="fade-up" data-aos-delay="350">
           <img src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&w=800&q=80" alt="App Gestión" class="w-full h-48 object-cover bg-gray-100 dark:bg-gray-800" loading="lazy" />
           <div class="p-6 flex-grow flex flex-col">
             <h3 class="text-xl font-bold mb-3 flex items-center gap-2 text-gray-900 dark:text-white">
-              <i class="fas fa-mobile-alt text-green-600"></i> App Servicio Técnico
+              <i class="fas fa-mobile-alt text-green-600"></i> App Servicio Técnico Móvil
             </h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">🔧 <strong>Tech:</strong> Kotlin, Firebase</p>
-            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 flex-grow">✅ Aplicación móvil nativa para la reserva y seguimiento de tareas asignadas a técnicos.</p>
-            <a href="https://demos-interactivos.vercel.app/" target="_blank" class="text-center w-full block px-4 py-2 mt-auto rounded-lg bg-green-600 text-white hover:bg-green-700 transition-colors font-medium shadow-md">
-              Ver demo
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">🔧 <strong>Tech:</strong> Kotlin, Firebase, Android SDK</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 flex-grow">✅ Aplicación nativa Android para técnicos en campo. Seguimiento de órdenes de trabajo, firma digital y sincronización en tiempo real.</p>
+            <a href="https://demos-interactivos.vercel.app/" target="_blank" class="text-center w-full block px-4 py-2.5 mt-auto rounded-lg bg-green-600 hover:bg-green-700 text-white transition-all font-medium shadow-md hover:shadow-lg flex items-center justify-center gap-2">
+              <i class="fas fa-external-link-alt"></i> Ver Demo Interactiva
             </a>
           </div>
         </div>
 
-        <!-- Proyecto 6: AutoPost RRSS -->
-        <div class="bg-white dark:bg-darkcard rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col" data-aos="fade-up" data-aos-delay="600">
+        <!-- PROYECTO 7: AutoPost Redes Sociales -->
+        <div class="project-card bg-white dark:bg-darkcard rounded-2xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col" data-category="automation" data-aos="fade-up" data-aos-delay="400">
           <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80" alt="AutoPost RRSS" class="w-full h-48 object-cover bg-gray-100 dark:bg-gray-800" loading="lazy" />
           <div class="p-6 flex-grow flex flex-col">
             <h3 class="text-xl font-bold mb-3 flex items-center gap-2 text-gray-900 dark:text-white">
               <i class="fas fa-share-alt text-pink-600"></i> AutoPost Redes Sociales
             </h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">🔧 <strong>Tech:</strong> Make, Instagram API, Notion</p>
-            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 flex-grow">✅ Automatiza publicaciones desde Notion/Sheets hacia Instagram. Ahorro sustancial de tiempo.</p>
-            <a href="https://demos-interactivos.vercel.app/" target="_blank" class="text-center w-full block px-4 py-2 mt-auto rounded-lg bg-pink-600 text-white hover:bg-pink-700 transition-colors font-medium shadow-md">
-              Ver demo
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">🔧 <strong>Tech:</strong> Make, Instagram Graph API, Notion, Google Cloud</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 flex-grow">✅ Pipeline de publicación automática de contenido multimedia desde Notion hacia Instagram con calendarización y métricas.</p>
+            <a href="https://demos-interactivos.vercel.app/" target="_blank" class="text-center w-full block px-4 py-2.5 mt-auto rounded-lg bg-pink-600 hover:bg-pink-700 text-white transition-all font-medium shadow-md hover:shadow-lg flex items-center justify-center gap-2">
+              <i class="fas fa-external-link-alt"></i> Ver Demo Interactiva
             </a>
           </div>
         </div>
@@ -258,9 +362,10 @@
           <i class="fab fa-js hover:text-yellow-400 transition-colors" title="JavaScript"></i>
           <i class="fab fa-react hover:text-cyan-400 transition-colors" title="React"></i>
           <i class="fab fa-node-js hover:text-green-500 transition-colors" title="Node.js"></i>
-          <i class="fas fa-database hover:text-blue-400 transition-colors" title="Databases"></i>
+          <i class="fas fa-database hover:text-blue-400 transition-colors" title="PostgreSQL / MongoDB"></i>
           <i class="fab fa-git-alt hover:text-orange-600 transition-colors" title="Git"></i>
-          <!-- Repeat para bucle -->
+          <i class="fab fa-docker hover:text-blue-500 transition-colors" title="Docker"></i>
+          <!-- Repeat para bucle infinito continuo -->
           <i class="fab fa-html5 hover:text-orange-500 transition-colors"></i>
           <i class="fab fa-css3-alt hover:text-blue-500 transition-colors"></i>
           <i class="fab fa-js hover:text-yellow-400 transition-colors"></i>
@@ -268,6 +373,7 @@
           <i class="fab fa-node-js hover:text-green-500 transition-colors"></i>
           <i class="fas fa-database hover:text-blue-400 transition-colors"></i>
           <i class="fab fa-git-alt hover:text-orange-600 transition-colors"></i>
+          <i class="fab fa-docker hover:text-blue-500 transition-colors"></i>
         </div>
       </div>
     </section>
@@ -282,18 +388,18 @@
             <div class="w-10 h-10 flex items-center justify-center bg-blue-100 dark:bg-blue-900/30 rounded-full"><i class="fab fa-linkedin text-2xl text-blue-600"></i></div>
             LinkedIn Profesional
           </a>
-          <a href="https://wa.me/5493794339735?text=Hola%20Mario,%20me%20gustaría%20saber%20más%20sobre%20tu%20portfolio" target="_blank" class="flex items-center gap-3 text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-green-500 dark:hover:text-green-400 transition-colors">
+          <a href="https://wa.me/5493794339735?text=Hola%20Mario,%20me%20gustaría%20saber%20más%20sobre%20tus%20proyectos" target="_blank" class="flex items-center gap-3 text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-green-500 dark:hover:text-green-400 transition-colors">
             <div class="w-10 h-10 flex items-center justify-center bg-green-100 dark:bg-green-900/30 rounded-full"><i class="fab fa-whatsapp text-2xl text-green-500"></i></div>
-            Contacto por WhatsApp
+            Contacto directo por WhatsApp
           </a>
           <div class="border-t border-gray-200 dark:border-gray-700 my-1"></div>
           <a href="https://github.com/marioaug/CV-Link" target="_blank" class="flex items-center gap-3 text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-red-500 transition-colors">
             <div class="w-10 h-10 flex items-center justify-center bg-red-100 dark:bg-red-900/30 rounded-full"><i class="fa-solid fa-file-pdf text-2xl text-red-500"></i></div>
-            Descargar / Ver CV
+            Descargar / Ver CV Completo
           </a>
           <a href="https://github.com/marioaug/Certificados" target="_blank" class="flex items-center gap-3 text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-yellow-500 transition-colors">
             <div class="w-10 h-10 flex items-center justify-center bg-yellow-100 dark:bg-yellow-900/30 rounded-full"><i class="fa-solid fa-certificate text-2xl text-yellow-500"></i></div>
-            Ver Certificados
+            Ver Certificaciones y Cursos
           </a>
         </div>
       </section>
@@ -305,14 +411,14 @@
           <form action="https://formsubmit.co/mario_ballester@hotmail.com" method="POST" id="contact-form" class="flex flex-col gap-4 h-full">
             <input type="text" name="name" placeholder="Tu nombre" required class="p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary transition-shadow">
             <input type="email" name="email" placeholder="Tu correo electrónico" required class="p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary transition-shadow">
-            <textarea name="message" placeholder="Tu mensaje" rows="3" required class="p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary transition-shadow resize-none flex-grow"></textarea>
-            <button type="submit" class="bg-primary hover:bg-[#009299] text-white font-bold py-3 rounded-lg transition-colors shadow-md hover:shadow-lg mt-auto">
-              Enviar Mensaje <i class="fas fa-paper-plane ml-2"></i>
+            <textarea name="message" placeholder="¿En qué puedo ayudarte o qué demo te gustaría ver?" rows="3" required class="p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary transition-shadow resize-none flex-grow"></textarea>
+            <button type="submit" class="bg-primary hover:bg-primaryHover text-white font-bold py-3 rounded-lg transition-colors shadow-md hover:shadow-lg mt-auto flex items-center justify-center gap-2">
+              <span>Enviar Mensaje</span> <i class="fas fa-paper-plane"></i>
             </button>
-            <p class="text-sm text-center text-gray-500 mt-2"><i class="fas fa-map-marker-alt"></i> Corrientes Capital, Argentina - 3400</p>
+            <p class="text-sm text-center text-gray-500 mt-2"><i class="fas fa-map-marker-alt"></i> Corrientes Capital, Argentina</p>
           </form>
           <div id="form-message" class="hidden text-green-600 font-medium text-center mt-4 bg-green-50 p-3 rounded-lg">
-            ✅ ¡Gracias por tu mensaje! Te responderé pronto.
+            ✅ ¡Gracias por tu mensaje! Te responderé a la brevedad.
           </div>
         </div>
       </section>
@@ -320,21 +426,186 @@
 
   </main>
 
+  <!-- ==================== MODALES EXPLICATIVOS ==================== -->
+
+  <!-- Modal 1: Bester Manager -->
+  <div id="modal-bester-manager" class="modal fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+    <div class="modal-backdrop fixed inset-0" onclick="closeModal('modal-bester-manager')"></div>
+    <div class="relative bg-white dark:bg-darkcard rounded-2xl shadow-2xl max-w-2xl w-full p-6 md:p-8 z-10 max-h-[90vh] overflow-y-auto border border-gray-200 dark:border-gray-700">
+      <button onclick="closeModal('modal-bester-manager')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:hover:text-white text-2xl focus:outline-none">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="flex items-center gap-3 mb-4">
+        <span class="badge-pill bg-emerald-500 text-white">En Producción</span>
+        <span class="badge-pill bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300">SaaS Comercial</span>
+      </div>
+      <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+        <i class="fas fa-layer-group text-primary"></i> Bester Manager
+      </h3>
+      <p class="text-sm font-medium text-cyan-600 dark:text-cyan-400 mb-4">Plataforma SaaS Integral de Gestión, Cuotas y Facturación Electrónica</p>
+      
+      <img src="assets/bester-manager.jpg" alt="Bester Manager Preview" class="w-full h-52 object-cover rounded-xl mb-4 border border-gray-200 dark:border-gray-800" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'" />
+      
+      <div class="space-y-3 text-sm text-gray-600 dark:text-gray-300 mb-6">
+        <p><strong>🎯 Propósito:</strong> Plataforma integral de gestión contable, administración de socios y cobranzas para clubes, fundaciones y empresas.</p>
+        <div class="bg-gray-50 dark:bg-gray-800/60 p-4 rounded-xl space-y-2 border border-gray-100 dark:border-gray-700">
+          <p><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>Facturación ARCA / AFIP:</strong> Conexión con WebServices oficiales mediante certificados digitales (.crt / .key) para emisión automática de facturas y CAE.</p>
+          <p><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>Pasarela Mercado Pago:</strong> Conciliación automática de cuotas y cobros recurrentes.</p>
+          <p><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>Métricas en Vivo:</strong> Gráficos interactivos de ingresos y padrón con Recharts y exportación a Excel (XLSX).</p>
+          <p><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>Stack Tecnológico:</strong> Next.js 16 (App Router), React 19, TypeScript, Prisma ORM, PostgreSQL, NextAuth v5, Resend y Cloudinary.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="https://wa.me/5493794339735?text=Hola%20Mario,%20me%20gustar%C3%ADa%20coordinar%20una%20demo%20de%20Bester%20Manager" target="_blank" class="flex-1 py-3 px-4 rounded-xl bg-primary hover:bg-primaryHover text-white font-semibold text-center transition-all shadow-md flex items-center justify-center gap-2">
+          <i class="fab fa-whatsapp text-lg"></i> Solicitar Demo Guiada
+        </a>
+        <button onclick="closeModal('modal-bester-manager')" class="py-3 px-6 rounded-xl bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 font-semibold transition-all">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: miPOS Bester (Detalle Completo) -->
+  <div id="modal-mipos" class="modal fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+    <div class="modal-backdrop fixed inset-0" onclick="closeModal('modal-mipos')"></div>
+    <div class="relative bg-white dark:bg-darkcard rounded-2xl shadow-2xl max-w-2xl w-full p-6 md:p-8 z-10 max-h-[90vh] overflow-y-auto border border-gray-200 dark:border-gray-700">
+      <button onclick="closeModal('modal-mipos')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:hover:text-white text-2xl focus:outline-none">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="flex items-center gap-3 mb-4 flex-wrap">
+        <span class="badge-pill bg-blue-600 text-white">SaaS Comercial</span>
+        <span class="badge-pill bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300">En Producción (DigitalOcean)</span>
+        <span class="badge-pill bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300">ARCA + MP + Catálogo Web</span>
+      </div>
+      <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+        <i class="fas fa-cash-register text-blue-500"></i> miPOS Bester
+      </h3>
+      <p class="text-sm font-medium text-blue-600 dark:text-blue-400 mb-4">ERP Integral, Punto de Venta Ágil, Catálogo Web y Taller Técnico</p>
+      
+      <img src="https://i.imgur.com/QWQx95h.gif" alt="miPOS Bester Preview" class="w-full h-52 object-cover rounded-xl mb-4 border border-gray-200 dark:border-gray-800" />
+      
+      <div class="space-y-3 text-sm text-gray-600 dark:text-gray-300 mb-6">
+        <p><strong>🎯 Propósito:</strong> Solución omnicanal para comercios de tecnología, repuestos y servicio técnico que requieren facturación electrónica, catálogo online para clientes y control riguroso de taller y caja.</p>
+        <div class="bg-gray-50 dark:bg-gray-800/60 p-4 rounded-xl space-y-2 border border-gray-100 dark:border-gray-700">
+          <p><i class="fas fa-check-circle text-blue-500 mr-2"></i><strong>Facturación Electrónica ARCA (AFIP):</strong> Emisión de facturas A, B y C con CAE y generación instantánea de comprobantes fiscales.</p>
+          <p><i class="fas fa-check-circle text-blue-500 mr-2"></i><strong>Mercado Pago QR & Checkout:</strong> Cobros en el mostrador mediante QR interoperable dinámico con conciliación en el balance de caja.</p>
+          <p><i class="fas fa-check-circle text-blue-500 mr-2"></i><strong>Catálogo Web Online:</strong> Tienda web pública sincronizada con el stock en tiempo real y fotos optimizadas en la nube con <strong>Cloudinary</strong>.</p>
+          <p><i class="fas fa-check-circle text-blue-500 mr-2"></i><strong>Servicio Técnico & Taller:</strong> Trazabilidad por código de orden, estados de reparación, bloqueo de entrega por deuda y avisos por email automáticos con <strong>Resend</strong>.</p>
+          <p><i class="fas fa-check-circle text-blue-500 mr-2"></i><strong>Cuentas Corrientes & Fidelización:</strong> Control de saldos pendientes de clientes, cupones de descuento y programa de puntos.</p>
+          <p><i class="fas fa-check-circle text-blue-500 mr-2"></i><strong>Asistente IA Integrado:</strong> Módulo inteligente alimentado con <strong>Google Gemini AI</strong> y MCP para consultas operativas rápidas.</p>
+          <p><i class="fas fa-check-circle text-blue-500 mr-2"></i><strong>Infraestructura:</strong> Next.js, Node.js + Express, PostgreSQL, Prisma ORM, Docker, PM2 y despliegue en DigitalOcean.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="https://wa.me/5493794339735?text=Hola%20Mario,%20me%20gustar%C3%ADa%20coordinar%20una%20demo%20de%20miPOS%20Bester" target="_blank" class="flex-1 py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-center transition-all shadow-md flex items-center justify-center gap-2">
+          <i class="fab fa-whatsapp text-lg"></i> Solicitar Demo Comercial
+        </a>
+        <button onclick="closeModal('modal-mipos')" class="py-3 px-6 rounded-xl bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 font-semibold transition-all">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Verificador de Precios Interactivo -->
+  <div id="modal-verificador" class="modal fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+    <div class="modal-backdrop fixed inset-0" onclick="closeModal('modal-verificador')"></div>
+    <div class="relative bg-white dark:bg-darkcard rounded-2xl shadow-2xl max-w-2xl w-full p-6 md:p-8 z-10 max-h-[90vh] overflow-y-auto border border-gray-200 dark:border-gray-700">
+      <button onclick="closeModal('modal-verificador')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:hover:text-white text-2xl focus:outline-none">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="flex items-center gap-3 mb-4">
+        <span class="badge-pill bg-purple-600 text-white">Hardware + Software</span>
+        <span class="badge-pill bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300">Retail & Farmacias</span>
+      </div>
+      <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+        <i class="fas fa-barcode text-emerald-500"></i> Verificador de Precios
+      </h3>
+      <p class="text-sm font-medium text-emerald-600 dark:text-emerald-400 mb-4">Terminal Interactiva de Consulta de Precios & Catálogo en Modo Kiosco</p>
+      
+      <img src="https://images.unsplash.com/photo-1576602976047-174e57a47881?auto=format&fit=crop&w=800&q=80" alt="Verificador de Precios Preview" class="w-full h-52 object-cover rounded-xl mb-4 border border-gray-200 dark:border-gray-800" />
+      
+      <div class="space-y-3 text-sm text-gray-600 dark:text-gray-300 mb-6">
+        <p><strong>🎯 Propósito:</strong> Terminal de autoservicio desarrollada para cadenas retail de farmacias y comercios, permitiendo a los clientes verificar precios, promociones y fotos de productos al instante con un lector óptico.</p>
+        <div class="bg-gray-50 dark:bg-gray-800/60 p-4 rounded-xl space-y-2 border border-gray-100 dark:border-gray-700">
+          <p><i class="fas fa-check-circle text-purple-500 mr-2"></i><strong>Terminal Kiosco (Hardware):</strong> Diseñado para operar en Raspberry Pi / mini PCs con pantalla táctil y lector de código de barras láser USB en modo Kiosco (F11 Fullscreen).</p>
+          <p><i class="fas fa-check-circle text-purple-500 mr-2"></i><strong>UX para Autoservicio & Focus Persistente:</strong> Mantiene el cursor siempre enfocado en el escáner (permite escanear en cualquier segundo sin tocar la pantalla) y activa automáticamente un Screensaver publicitario interactivo tras 10s de inactividad.</p>
+          <p><i class="fas fa-check-circle text-purple-500 mr-2"></i><strong>Alta Disponibilidad (Zero Downtime):</strong> Conexión a base central en MongoDB Atlas con respaldo local instantáneo en SQLite3 para operar sin interrupciones si se corta internet en el local.</p>
+          <p><i class="fas fa-check-circle text-purple-500 mr-2"></i><strong>Sincronización ERP:</strong> Lee archivos XML en tiempo real generados por el ERP de facturación comercial, asegurando precios 100% actualizados con el sistema de cajas.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="https://wa.me/5493794339735?text=Hola%20Mario,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20el%20Verificador%20de%20Precios%20Interactivo" target="_blank" class="flex-1 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-center transition-all shadow-md flex items-center justify-center gap-2">
+          <i class="fab fa-whatsapp text-lg"></i> Consultar / Solicitar Demo
+        </a>
+        <button onclick="closeModal('modal-verificador')" class="py-3 px-6 rounded-xl bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 font-semibold transition-all">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: Resto Bester -->
+  <div id="modal-resto" class="modal fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+    <div class="modal-backdrop fixed inset-0" onclick="closeModal('modal-resto')"></div>
+    <div class="relative bg-white dark:bg-darkcard rounded-2xl shadow-2xl max-w-2xl w-full p-6 md:p-8 z-10 max-h-[90vh] overflow-y-auto border border-gray-200 dark:border-gray-700">
+      <button onclick="closeModal('modal-resto')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:hover:text-white text-2xl focus:outline-none">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="flex items-center gap-3 mb-4">
+        <span class="badge-pill bg-orange-600 text-white">Comercial</span>
+        <span class="badge-pill bg-orange-100 dark:bg-orange-900/50 text-orange-700 dark:text-orange-300">Gastronomía</span>
+      </div>
+      <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+        <i class="fas fa-utensils text-orange-500"></i> Resto Bester
+      </h3>
+      <p class="text-sm font-medium text-orange-600 dark:text-orange-400 mb-4">Gestión Inteligente de Salón, Mesas y Comandas en Cocina</p>
+      
+      <img src="https://i.imgur.com/KxOdk4z.png" alt="Resto Bester Preview" class="w-full h-52 object-cover rounded-xl mb-4 border border-gray-200 dark:border-gray-800" />
+      
+      <div class="space-y-3 text-sm text-gray-600 dark:text-gray-300 mb-6">
+        <p><strong>🎯 Propósito:</strong> Diseñado para bares y restaurantes que buscan agilidad en la atención, eliminación de comandas de papel y control total de pedidos.</p>
+        <div class="bg-gray-50 dark:bg-gray-800/60 p-4 rounded-xl space-y-2 border border-gray-100 dark:border-gray-700">
+          <p><i class="fas fa-check-circle text-orange-500 mr-2"></i>Mapa interactivo visual de mesas con estados (Libre, Ocupada, Cuenta solicitada).</p>
+          <p><i class="fas fa-check-circle text-orange-500 mr-2"></i>Envío instantáneo de comandas a pantalla de cocina o comanderas térmicas.</p>
+          <p><i class="fas fa-check-circle text-orange-500 mr-2"></i>Stack moderno: Next.js, React, Prisma ORM y Tailwind CSS.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="https://wa.me/5493794339735?text=Hola%20Mario,%20me%20gustar%C3%ADa%20ver%20una%20demo%20de%20Resto%20Bester" target="_blank" class="flex-1 py-3 px-4 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-semibold text-center transition-all shadow-md flex items-center justify-center gap-2">
+          <i class="fab fa-whatsapp text-lg"></i> Solicitar Demo Comercial
+        </a>
+        <button onclick="closeModal('modal-resto')" class="py-3 px-6 rounded-xl bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 font-semibold transition-all">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
   <footer class="bg-white dark:bg-darkcard border-t border-gray-200 dark:border-gray-800 py-8 mt-10">
     <div class="max-w-4xl mx-auto text-center px-4">
-      <button id="scrollTopWrapper" class="mb-6 flex items-center justify-center gap-2 mx-auto text-primary hover:text-blue-500 font-bold transition-transform hover:-translate-y-1">
+      <button id="scrollTopWrapper" class="mb-6 flex items-center justify-center gap-2 mx-auto text-primary hover:text-cyan-400 font-bold transition-transform hover:-translate-y-1">
         <i class="fa-solid fa-circle-up text-2xl"></i> VOLVER ARRIBA
       </button>
       <p class="text-gray-600 dark:text-gray-400 font-medium mb-4">&copy; 2026 Mario Ballester. Todos los derechos reservados.</p>
       <div class="flex justify-center gap-6">
-        <a href="https://github.com/marioaug" target="_blank" class="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors transform hover:scale-110">
+        <a href="https://github.com/marioaug" target="_blank" title="GitHub" class="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors transform hover:scale-110">
           <i class="fab fa-github text-2xl"></i>
         </a>
-        <a href="https://linkedin.com/in/marioballester10" target="_blank" class="text-gray-500 hover:text-blue-600 transition-colors transform hover:scale-110">
+        <a href="https://www.linkedin.com/in/mario-ballester-739b8951/" target="_blank" title="LinkedIn" class="text-gray-500 hover:text-blue-600 transition-colors transform hover:scale-110">
           <i class="fab fa-linkedin text-2xl"></i>
         </a>
-        <a href="mailto:mario_ballester@hotmail.com" class="text-gray-500 hover:text-red-500 transition-colors transform hover:scale-110">
+        <a href="mailto:mario_ballester@hotmail.com" title="Email" class="text-gray-500 hover:text-red-500 transition-colors transform hover:scale-110">
           <i class="fas fa-envelope text-2xl"></i>
+        </a>
+        <a href="https://wa.me/5493794339735" target="_blank" title="WhatsApp" class="text-gray-500 hover:text-green-500 transition-colors transform hover:scale-110">
+          <i class="fab fa-whatsapp text-2xl"></i>
         </a>
       </div>
     </div>
@@ -342,7 +613,7 @@
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    // Iniciar Animaciones
+    // Iniciar Animaciones AOS
     AOS.init({ once: true, offset: 100 });
 
     // Lógica del modo oscuro con Tailwind
@@ -363,6 +634,57 @@
         localStorage.theme = 'dark';
       } else {
         localStorage.theme = 'light';
+      }
+    });
+
+    // Filtros de Proyectos
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.classList.remove('bg-primary', 'text-white', 'active');
+          b.classList.add('bg-gray-200', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-300');
+        });
+
+        btn.classList.add('bg-primary', 'text-white', 'active');
+        btn.classList.remove('bg-gray-200', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-300');
+
+        const filterValue = btn.getAttribute('data-filter');
+
+        projectCards.forEach(card => {
+          if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // Control de Modales
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+      }
+    }
+
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+    }
+
+    // Cerrar modal con tecla Escape
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal').forEach(m => m.classList.add('hidden'));
+        document.body.classList.remove('overflow-hidden');
       }
     });
 
